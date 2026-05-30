@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>auth.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+.s6 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+auth.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;pt-BR&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s2">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s1">MySQLFixer | Acesso ao Sistema</span><span class="s0">&lt;/title&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">href</span><span class="s3">=&quot;style.css&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;orb orb-1&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;orb orb-2&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;auth-wrapper&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">width</span><span class="s1">:</span><span class="s4">100</span><span class="s1">%; </span><span class="s2">max-width</span><span class="s1">:</span><span class="s4">900</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s5">&lt;!-- Brand --&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;auth-brand fade-up&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">display</span><span class="s1">:</span><span class="s3">inline-flex</span><span class="s1">;</span><span class="s2">align-items</span><span class="s1">:</span><span class="s3">center</span><span class="s1">;</span><span class="s2">gap</span><span class="s1">:</span><span class="s4">12</span><span class="s3">px</span><span class="s1">;</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s4">8</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;logo-icon scan-anim&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">width</span><span class="s1">:</span><span class="s4">42</span><span class="s3">px</span><span class="s1">;</span><span class="s2">height</span><span class="s1">:</span><span class="s4">42</span><span class="s3">px</span><span class="s1">;</span><span class="s2">border-radius</span><span class="s1">:</span><span class="s4">10</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;22&quot; </span><span class="s2">height</span><span class="s3">=&quot;22&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;#00C8F0&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;2&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;path </span><span class="s2">d</span><span class="s3">=&quot;M12 2L22 7V17L12 22L2 17V7L12 2Z&quot;</span><span class="s0">/&gt;</span>
+                        <span class="s0">&lt;circle </span><span class="s2">cx</span><span class="s3">=&quot;12&quot; </span><span class="s2">cy</span><span class="s3">=&quot;12&quot; </span><span class="s2">r</span><span class="s3">=&quot;4&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;/svg&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;auth-brand-name&quot;</span><span class="s0">&gt;</span><span class="s1">MySQL</span><span class="s0">&lt;span&gt;</span><span class="s1">Fixer</span><span class="s0">&lt;/span&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;auth-brand-tag&quot;</span><span class="s0">&gt;</span><span class="s1">Sistema de Detecção de Anomalias · v2.0</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+
+        <span class="s5">&lt;!-- Cards --&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;auth-container&quot;</span><span class="s0">&gt;</span>
+
+            <span class="s5">&lt;!-- CADASTRO --&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card fade-up fade-up-2&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;auth-card-title&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;18&quot; </span><span class="s2">height</span><span class="s3">=&quot;18&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;var(--cyan)&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;2&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;path </span><span class="s2">d</span><span class="s3">=&quot;M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2&quot;</span><span class="s0">/&gt;</span>
+                        <span class="s0">&lt;circle </span><span class="s2">cx</span><span class="s3">=&quot;12&quot; </span><span class="s2">cy</span><span class="s3">=&quot;7&quot; </span><span class="s2">r</span><span class="s3">=&quot;4&quot;</span><span class="s0">/&gt;</span>
+                        <span class="s0">&lt;line </span><span class="s2">x1</span><span class="s3">=&quot;12&quot; </span><span class="s2">y1</span><span class="s3">=&quot;12&quot; </span><span class="s2">x2</span><span class="s3">=&quot;12&quot; </span><span class="s2">y2</span><span class="s3">=&quot;16&quot;</span><span class="s0">/&gt;</span>
+                        <span class="s0">&lt;line </span><span class="s2">x1</span><span class="s3">=&quot;10&quot; </span><span class="s2">y1</span><span class="s3">=&quot;14&quot; </span><span class="s2">x2</span><span class="s3">=&quot;14&quot; </span><span class="s2">y2</span><span class="s3">=&quot;14&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;/svg&gt;</span>
+                    <span class="s1">Criar Conta</span>
+                <span class="s0">&lt;/div&gt;</span>
+
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s4">14</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;label </span><span class="s2">class</span><span class="s3">=&quot;form-label&quot;</span><span class="s0">&gt;</span><span class="s1">Nome Completo</span><span class="s0">&lt;/label&gt;</span>
+                    <span class="s0">&lt;input </span><span class="s2">id</span><span class="s3">=&quot;nome&quot; </span><span class="s2">class</span><span class="s3">=&quot;form-control&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;Seu nome&quot; </span><span class="s2">autocomplete</span><span class="s3">=&quot;off&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s4">14</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;label </span><span class="s2">class</span><span class="s3">=&quot;form-label&quot;</span><span class="s0">&gt;</span><span class="s1">E-mail</span><span class="s0">&lt;/label&gt;</span>
+                    <span class="s0">&lt;input </span><span class="s2">id</span><span class="s3">=&quot;email&quot; </span><span class="s2">type</span><span class="s3">=&quot;email&quot; </span><span class="s2">class</span><span class="s3">=&quot;form-control&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;email@empresa.com&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s4">20</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;label </span><span class="s2">class</span><span class="s3">=&quot;form-label&quot;</span><span class="s0">&gt;</span><span class="s1">Senha</span><span class="s0">&lt;/label&gt;</span>
+                    <span class="s0">&lt;input </span><span class="s2">id</span><span class="s3">=&quot;senha&quot; </span><span class="s2">type</span><span class="s3">=&quot;password&quot; </span><span class="s2">class</span><span class="s3">=&quot;form-control&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;••••••••&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;button </span><span class="s2">class</span><span class="s3">=&quot;btn-cyan w-100&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">cadastrar()</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;13&quot; </span><span class="s2">height</span><span class="s3">=&quot;13&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;currentColor&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;2.5&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;path </span><span class="s2">d</span><span class="s3">=&quot;M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;/svg&gt;</span>
+                    <span class="s1">CADASTRAR NO SISTEMA</span>
+                <span class="s0">&lt;/button&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s5">&lt;!-- LOGIN --&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card fade-up fade-up-3&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;auth-card-title&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;18&quot; </span><span class="s2">height</span><span class="s3">=&quot;18&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;var(--emerald)&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;2&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;rect </span><span class="s2">x</span><span class="s3">=&quot;3&quot; </span><span class="s2">y</span><span class="s3">=&quot;11&quot; </span><span class="s2">width</span><span class="s3">=&quot;18&quot; </span><span class="s2">height</span><span class="s3">=&quot;11&quot; </span><span class="s2">rx</span><span class="s3">=&quot;2&quot; </span><span class="s2">ry</span><span class="s3">=&quot;2&quot;</span><span class="s0">/&gt;</span>
+                        <span class="s0">&lt;path </span><span class="s2">d</span><span class="s3">=&quot;M7 11V7a5 5 0 0 1 10 0v4&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;/svg&gt;</span>
+                    <span class="s1">Acessar Sistema</span>
+                <span class="s0">&lt;/div&gt;</span>
+
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s4">14</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;label </span><span class="s2">class</span><span class="s3">=&quot;form-label&quot;</span><span class="s0">&gt;</span><span class="s1">E-mail</span><span class="s0">&lt;/label&gt;</span>
+                    <span class="s0">&lt;input </span><span class="s2">id</span><span class="s3">=&quot;emailLogin&quot; </span><span class="s2">type</span><span class="s3">=&quot;email&quot; </span><span class="s2">class</span><span class="s3">=&quot;form-control&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;email@empresa.com&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;form-group&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s4">20</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;label </span><span class="s2">class</span><span class="s3">=&quot;form-label&quot;</span><span class="s0">&gt;</span><span class="s1">Senha</span><span class="s0">&lt;/label&gt;</span>
+                    <span class="s0">&lt;input </span><span class="s2">id</span><span class="s3">=&quot;senhaLogin&quot; </span><span class="s2">type</span><span class="s3">=&quot;password&quot; </span><span class="s2">class</span><span class="s3">=&quot;form-control&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;••••••••&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+
+                <span class="s0">&lt;button </span><span class="s2">class</span><span class="s3">=&quot;btn-cyan w-100&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">background</span><span class="s1">:</span><span class="s0">var</span><span class="s1">(</span><span class="s0">--emerald</span><span class="s1">); </span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s4">12</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">login()</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;13&quot; </span><span class="s2">height</span><span class="s3">=&quot;13&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;currentColor&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;2.5&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;polyline </span><span class="s2">points</span><span class="s3">=&quot;9 18 15 12 9 6&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;/svg&gt;</span>
+                    <span class="s1">ENTRAR NO SISTEMA</span>
+                <span class="s0">&lt;/button&gt;</span>
+                <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;index.html&quot; </span><span class="s2">class</span><span class="s3">=&quot;btn-ghost w-100&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">text-align</span><span class="s1">:</span><span class="s3">center</span><span class="s1">;</span><span class="s2">display</span><span class="s1">:</span><span class="s3">block</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s1">Continuar sem login →</span>
+                <span class="s0">&lt;/a&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+
+        <span class="s5">&lt;!-- Response message --&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;resposta-wrapper&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">display</span><span class="s1">:</span><span class="s3">none</span><span class="s1">;</span><span class="s2">margin-top</span><span class="s1">:</span><span class="s4">20</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot; </span><span class="s2">class</span><span class="s3">=&quot;fade-up&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-box&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-header&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-header-title&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-dots&quot;</span><span class="s0">&gt;</span>
+                            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-dot dot-r&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-dot dot-y&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-dot dot-g&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                        <span class="s0">&lt;/div&gt;</span>
+                        <span class="s1">Resposta do Servidor</span>
+                    <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;pre </span><span class="s2">id</span><span class="s3">=&quot;resposta&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">font-size</span><span class="s1">:</span><span class="s4">0.82</span><span class="s3">rem</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;&lt;/pre&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+
+        <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">text-align</span><span class="s1">:</span><span class="s3">center</span><span class="s1">; </span><span class="s2">margin-top</span><span class="s1">:</span><span class="s4">24</span><span class="s3">px</span><span class="s1">; </span><span class="s2">font-family</span><span class="s1">:</span><span class="s3">'DM Mono'</span><span class="s1">,</span><span class="s3">monospace</span><span class="s1">; </span><span class="s2">font-size</span><span class="s1">:</span><span class="s4">0.65</span><span class="s3">rem</span><span class="s1">; </span><span class="s2">color</span><span class="s1">:</span><span class="s0">var</span><span class="s1">(</span><span class="s0">--text-dim</span><span class="s1">);</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+            <span class="s1">MySQL</span><span class="s0">&lt;strong </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">color</span><span class="s1">:</span><span class="s0">var</span><span class="s1">(</span><span class="s0">--text</span><span class="s1">);</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s1">Fixer</span><span class="s0">&lt;/strong&gt; </span><span class="s1">· Sistema de Detecção de Anomalias</span>
+        <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;script&gt;</span>
+    <span class="s1">async </span><span class="s6">function </span><span class="s1">cadastrar() {</span>
+        <span class="s6">const </span><span class="s1">data = {</span>
+            <span class="s1">nome:  document.getElementById(</span><span class="s3">&quot;nome&quot;</span><span class="s1">).value,</span>
+            <span class="s1">email: document.getElementById(</span><span class="s3">&quot;email&quot;</span><span class="s1">).value,</span>
+            <span class="s1">senha: document.getElementById(</span><span class="s3">&quot;senha&quot;</span><span class="s1">).value</span>
+        <span class="s1">};</span>
+
+        <span class="s6">const </span><span class="s1">res = await fetch(</span><span class="s3">&quot;/auth/register&quot;</span><span class="s1">, {</span>
+            <span class="s1">method: </span><span class="s3">&quot;POST&quot;</span><span class="s1">,</span>
+            <span class="s1">headers: { </span><span class="s3">&quot;Content-Type&quot;</span><span class="s1">: </span><span class="s3">&quot;application/json&quot; </span><span class="s1">},</span>
+            <span class="s1">body: JSON.stringify(data)</span>
+        <span class="s1">});</span>
+
+        <span class="s1">mostrarResposta(await res.text());</span>
+    <span class="s1">}</span>
+
+    <span class="s1">async </span><span class="s6">function </span><span class="s1">login() {</span>
+        <span class="s6">const </span><span class="s1">data = {</span>
+            <span class="s1">email: document.getElementById(</span><span class="s3">&quot;emailLogin&quot;</span><span class="s1">).value,</span>
+            <span class="s1">senha: document.getElementById(</span><span class="s3">&quot;senhaLogin&quot;</span><span class="s1">).value</span>
+        <span class="s1">};</span>
+
+        <span class="s6">const </span><span class="s1">res = await fetch(</span><span class="s3">&quot;/auth/login&quot;</span><span class="s1">, {</span>
+            <span class="s1">method: </span><span class="s3">&quot;POST&quot;</span><span class="s1">,</span>
+            <span class="s1">headers: { </span><span class="s3">&quot;Content-Type&quot;</span><span class="s1">: </span><span class="s3">&quot;application/json&quot; </span><span class="s1">},</span>
+            <span class="s1">body: JSON.stringify(data)</span>
+        <span class="s1">});</span>
+
+        <span class="s1">mostrarResposta(await res.text());</span>
+    <span class="s1">}</span>
+
+    <span class="s6">function </span><span class="s1">mostrarResposta(texto) {</span>
+        <span class="s1">document.getElementById(</span><span class="s3">&quot;resposta-wrapper&quot;</span><span class="s1">).style.display = </span><span class="s3">&quot;block&quot;</span><span class="s1">;</span>
+        <span class="s1">document.getElementById(</span><span class="s3">&quot;resposta&quot;</span><span class="s1">).innerText = texto;</span>
+    <span class="s1">}</span>
+<span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>

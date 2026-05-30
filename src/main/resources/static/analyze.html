@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQLFixer | Análises</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+        <span class="logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path d="M12 2 22 7v10l-10 5-10-5V7l10-5Z"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+        </span>
+        MySQL<span>Fixer</span>
+    </a>
+    <div class="navbar-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Painel</a>
+        <a href="analyze.html" class="nav-link active">Análises</a>
+        <a href="cadastro.html" class="nav-link">Usuários</a>
+        <a href="auth.html" class="nav-link">Acesso</a>
+    </div>
+    <div class="navbar-actions">
+        <div class="navbar-status"><span class="pulse amber"></span>AGUARDANDO CONEXÃO</div>
+    </div>
+</nav>
+
+<main class="wrapper">
+    <header class="page-header">
+        <div>
+            <div class="section-label">Forensic Engine</div>
+            <h1 class="section-title">Análise SQL e varredura do schema</h1>
+            <p class="section-sub">Valide scripts, procedures, functions, views, SELECTs, JOINs e estruturas do banco com sugestões de correção.</p>
+        </div>
+        <div class="page-actions">
+            <span class="tag tag-blue" data-db-status>Sem conexão</span>
+            <button class="btn-ghost" type="button" id="analyze-db-from-sql">Varredura do banco</button>
+        </div>
+    </header>
+
+    <section class="layout-main">
+        <div class="panel">
+            <div class="panel-header" style="margin-bottom:16px;">
+                <div>
+                    <div class="panel-title">Editor SQL</div>
+                    <div class="panel-sub">Cole um script ou importe um arquivo `.sql`.</div>
+                </div>
+                <input type="file" id="arquivo" accept=".sql,.txt" hidden>
+                <button class="btn-ghost" type="button" onclick="document.getElementById('arquivo').click()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8 12 3 7 8"/><path d="M12 3v12"/></svg>
+                    Importar
+                </button>
+            </div>
+
+            <form id="sql-form">
+                <textarea id="sql-editor" placeholder="SELECT * FROM usuarios JOIN pedidos;"></textarea>
+                <div class="scan-toolbar">
+                    <button class="btn-cyan" type="submit">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg>
+                        Analisar SQL
+                    </button>
+                    <span class="tag tag-cyan" id="file-name" style="display:none;"><span id="file-label">arquivo.sql</span></span>
+                </div>
+            </form>
+
+            <div class="result-box" style="margin-top:16px;">
+                <div class="result-header">
+                    <div class="result-header-title">
+                        <div class="result-dots"><span class="result-dot dot-r"></span><span class="result-dot dot-y"></span><span class="result-dot dot-g"></span></div>
+                        Relatório textual
+                    </div>
+                </div>
+                <pre id="resultado">Aguardando SQL para análise...</pre>
+            </div>
+        </div>
+
+        <aside class="panel">
+            <div class="panel-header" style="margin-bottom:16px;">
+                <div>
+                    <div class="panel-title">Configuração de análise</div>
+                    <div class="panel-sub">Escolha o que o motor deve inspecionar.</div>
+                </div>
+                <span class="tag tag-blue">Config</span>
+            </div>
+
+            <form id="analysis-settings">
+                <div class="toggle-grid">
+                    <label class="toggle-row">Tabelas <input type="checkbox" name="checkTables" checked></label>
+                    <label class="toggle-row">Índices <input type="checkbox" name="checkIndexes" checked></label>
+                    <label class="toggle-row">Views <input type="checkbox" name="checkViews" checked></label>
+                    <label class="toggle-row">Procedures <input type="checkbox" name="checkProcedures" checked></label>
+                    <label class="toggle-row">Functions <input type="checkbox" name="checkFunctions" checked></label>
+                    <label class="toggle-row">SELECTs <input type="checkbox" name="checkSelects" checked></label>
+                    <label class="toggle-row">JOINs <input type="checkbox" name="checkJoins" checked></label>
+                    <label class="toggle-row">Sintaxe <input type="checkbox" name="checkSyntax" checked></label>
+                    <label class="toggle-row">Segurança <input type="checkbox" name="checkSecurity" checked></label>
+                    <label class="toggle-row">Correção SQL <input type="checkbox" name="autoFixSql" checked></label>
+                </div>
+
+                <div class="form-grid" style="margin-top:14px;">
+                    <div class="form-group">
+                        <label class="form-label" for="largeTableRows">Tabela grande</label>
+                        <input id="largeTableRows" name="largeTableRows" type="number" class="form-control" value="50000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="slowQueryMs">Query lenta (ms)</label>
+                        <input id="slowQueryMs" name="slowQueryMs" type="number" class="form-control" value="1000">
+                    </div>
+                </div>
+            </form>
+
+            <div class="result-box" style="margin-top:16px;">
+                <div class="result-header">
+                    <div class="result-header-title">Varredura do banco</div>
+                </div>
+                <pre id="db-scan-output">A varredura usa a conexão ativa configurada na Home.</pre>
+            </div>
+        </aside>
+    </section>
+
+    <section class="grid-2" style="margin-top:16px;">
+        <div class="panel">
+            <div class="panel-header" style="margin-bottom:16px;">
+                <div>
+                    <div class="panel-title">Issues do SQL</div>
+                    <div class="panel-sub">Erros de sintaxe, risco, lógica e performance.</div>
+                </div>
+            </div>
+            <div id="sql-report" class="issue-list">
+                <div class="empty-state">Nenhuma análise executada ainda.</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="alert-feed-title">
+                <span>Alertas recentes</span>
+                <span class="tag tag-red"><span data-alert-count>0</span> abertos</span>
+            </div>
+            <div id="latest-alerts" class="alert-list">
+                <div class="empty-state">Nenhum alerta crítico no momento.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel" style="margin-top:16px;">
+        <div class="panel-header" style="margin-bottom:16px;">
+            <div>
+                <div class="panel-title">Issues do banco</div>
+                <div class="panel-sub">Resultado da última varredura estrutural.</div>
+            </div>
+        </div>
+        <div id="db-report" class="issue-list">
+            <div class="empty-state">Execute uma varredura do banco para preencher esta área.</div>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+        <span>MySQL<strong>Fixer</strong> · Análises</span>
+        <span>SQL, views, procedures, functions, SELECT e JOIN</span>
+    </footer>
+</main>
+</body>
+</html>

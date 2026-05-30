@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQLFixer | Acesso</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+<div class="auth-wrapper">
+    <div class="auth-shell">
+        <div class="auth-brand">
+            <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:8px;">
+                <span class="logo-icon" style="width:42px;height:42px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                        <path d="M12 2 22 7v10l-10 5-10-5V7l10-5Z"></path>
+                        <circle cx="12" cy="12" r="4"></circle>
+                    </svg>
+                </span>
+                <div class="auth-brand-name">MySQL<span>Fixer</span></div>
+            </div>
+            <div class="auth-brand-tag">Acesso ao sistema de monitoramento</div>
+        </div>
+
+        <div class="auth-container">
+            <section class="card">
+                <div class="auth-card-title">Criar conta</div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="nome">Nome completo</label>
+                    <input id="nome" class="form-control" placeholder="Seu nome" autocomplete="off">
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="email">E-mail</label>
+                    <input id="email" type="email" class="form-control" placeholder="email@empresa.com">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="form-label" for="senha">Senha</label>
+                    <input id="senha" type="password" class="form-control" placeholder="Senha">
+                </div>
+                <button class="btn-cyan w-100" type="button" onclick="cadastrar()">Cadastrar</button>
+            </section>
+
+            <section class="card">
+                <div class="auth-card-title">Entrar</div>
+                <div class="form-group mb-3">
+                    <label class="form-label" for="emailLogin">E-mail</label>
+                    <input id="emailLogin" type="email" class="form-control" placeholder="email@empresa.com">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="form-label" for="senhaLogin">Senha</label>
+                    <input id="senhaLogin" type="password" class="form-control" placeholder="Senha">
+                </div>
+                <button class="btn-cyan w-100" type="button" onclick="login()">Entrar</button>
+                <a href="index.html" class="btn-ghost w-100" style="margin-top:10px;">Continuar</a>
+            </section>
+        </div>
+
+        <div id="resposta-wrapper" class="result-box" style="display:none;margin-top:16px;">
+            <div class="result-header">
+                <div class="result-header-title">
+                    <div class="result-dots"><span class="result-dot dot-r"></span><span class="result-dot dot-y"></span><span class="result-dot dot-g"></span></div>
+                    Resposta do servidor
+                </div>
+            </div>
+            <pre id="resposta"></pre>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function cadastrar() {
+        const data = {
+            nome: document.getElementById("nome").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            senha: document.getElementById("senha").value
+        };
+
+        const res = await fetch("/auth/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        mostrarResposta(await res.text());
+    }
+
+    async function login() {
+        const data = {
+            email: document.getElementById("emailLogin").value.trim(),
+            senha: document.getElementById("senhaLogin").value
+        };
+
+        const res = await fetch("/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const texto = await res.text();
+        mostrarResposta(texto);
+        if (texto.toLowerCase().includes("sucesso")) {
+            setTimeout(() => location.href = "index.html", 600);
+        }
+    }
+
+    function mostrarResposta(texto) {
+        document.getElementById("resposta-wrapper").style.display = "block";
+        document.getElementById("resposta").innerText = texto;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQLFixer | Usuários</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+        <span class="logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path d="M12 2 22 7v10l-10 5-10-5V7l10-5Z"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+        </span>
+        MySQL<span>Fixer</span>
+    </a>
+    <div class="navbar-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Painel</a>
+        <a href="analyze.html" class="nav-link">Análises</a>
+        <a href="cadastro.html" class="nav-link active">Usuários</a>
+        <a href="auth.html" class="nav-link">Acesso</a>
+    </div>
+    <div class="navbar-actions">
+        <div class="navbar-status"><span class="pulse amber"></span>AGUARDANDO CONEXÃO</div>
+    </div>
+</nav>
+
+<main class="wrapper">
+    <header class="page-header">
+        <div>
+            <div class="section-label">Identity</div>
+            <h1 class="section-title">Controle de acesso</h1>
+            <p class="section-sub">Gerencie usuários autorizados a operar o MySQLFixer e acompanhar alertas do banco.</p>
+        </div>
+        <div class="page-actions">
+            <span class="tag tag-blue" data-db-status>Sem conexão</span>
+            <button class="btn-ghost" type="button" onclick="listar()">Atualizar</button>
+        </div>
+    </header>
+
+    <section class="panel" style="margin-bottom:16px;">
+        <div class="panel-header" style="margin-bottom:18px;">
+            <div>
+                <div class="panel-title">Registrar usuário</div>
+                <div class="panel-sub">A conta é gravada no banco configurado pela aplicação Spring.</div>
+            </div>
+            <span class="tag tag-cyan">Acesso</span>
+        </div>
+
+        <div class="form-grid-3">
+            <div class="form-group">
+                <label class="form-label" for="nome">Nome completo</label>
+                <input id="nome" class="form-control" placeholder="Ex: Ana Silva" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="email">E-mail</label>
+                <input id="email" type="email" class="form-control" placeholder="email@empresa.com" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="senha">Senha</label>
+                <input id="senha" type="password" class="form-control" placeholder="Senha de acesso">
+            </div>
+        </div>
+
+        <div class="form-grid-3" style="margin-top:14px;">
+            <div class="form-group">
+                <label class="form-label" for="sexo">Gênero</label>
+                <select id="sexo" class="form-select">
+                    <option value="" selected>Não informado</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="O">Outro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="dataNascimento">Data de nascimento</label>
+                <input id="dataNascimento" type="date" class="form-control">
+            </div>
+            <div class="form-group" style="justify-content:end;">
+                <button class="btn-cyan" type="button" onclick="salvar()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M20 6 9 17l-5-5"/></svg>
+                    Registrar
+                </button>
+            </div>
+        </div>
+
+        <div id="form-msg" style="display:none; margin-top:14px;"></div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header" style="margin-bottom:16px;">
+            <div>
+                <div class="panel-title">Usuários cadastrados</div>
+                <div class="panel-sub">Total: <strong id="total-users">--</strong></div>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Status</th>
+                    <th>Nascimento</th>
+                    <th>Ação</th>
+                </tr>
+                </thead>
+                <tbody id="tabela">
+                <tr>
+                    <td colspan="6" style="text-align:center;">Carregando usuários...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+        <span>MySQL<strong>Fixer</strong> · Usuários</span>
+        <span>Controle de acesso</span>
+    </footer>
+</main>
+
+<script>
+    async function listar() {
+        const tabela = document.getElementById("tabela");
+        try {
+            const usuarios = await MySQLFixerApp.api("/usuarios");
+            document.getElementById("total-users").innerText = usuarios.length;
+
+            if (!usuarios.length) {
+                tabela.innerHTML = `<tr><td colspan="6" style="text-align:center;">Nenhum usuário cadastrado.</td></tr>`;
+                return;
+            }
+
+            tabela.innerHTML = usuarios.map((u) => {
+                const dataFmt = u.dataNascimento ? new Date(u.dataNascimento).toLocaleDateString("pt-BR") : "-";
+                return `
+                    <tr>
+                        <td class="td-id">#${u.id}</td>
+                        <td class="td-name">${escapeHtml(u.nome || "-")}</td>
+                        <td>${escapeHtml(u.email || "-")}</td>
+                        <td><span class="badge-active"><span class="pulse" style="width:6px;height:6px;"></span>Ativo</span></td>
+                        <td>${dataFmt}</td>
+                        <td><button class="btn-danger" type="button" onclick="deletar(${u.id})">Excluir</button></td>
+                    </tr>`;
+            }).join("");
+        } catch (e) {
+            tabela.innerHTML = `<tr><td colspan="6" style="text-align:center;">Servidor Java offline ou banco indisponível.</td></tr>`;
+        }
+    }
+
+    async function salvar() {
+        const data = {
+            nome: document.getElementById("nome").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            senha: document.getElementById("senha").value,
+            sexo: document.getElementById("sexo").value,
+            dataNascimento: document.getElementById("dataNascimento").value
+        };
+
+        const msg = document.getElementById("form-msg");
+        try {
+            const res = await fetch("/usuarios", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+            if (!res.ok) throw new Error("Falha ao salvar usuário.");
+            msg.className = "tag tag-green";
+            msg.style.display = "inline-flex";
+            msg.innerText = "Usuário registrado.";
+            await listar();
+        } catch (e) {
+            msg.className = "tag tag-red";
+            msg.style.display = "inline-flex";
+            msg.innerText = e.message;
+        }
+        setTimeout(() => msg.style.display = "none", 3500);
+    }
+
+    async function deletar(id) {
+        if (!confirm("Deseja revogar o acesso deste usuário?")) return;
+        await fetch("/usuarios/" + id, { method: "DELETE" });
+        await listar();
+    }
+
+    function escapeHtml(value) {
+        return String(value ?? "")
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+
+    document.addEventListener("DOMContentLoaded", listar);
+</script>
+</body>
+</html>

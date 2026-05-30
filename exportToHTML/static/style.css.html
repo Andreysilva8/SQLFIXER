@@ -1,0 +1,806 @@
+<html>
+<head>
+<title>style.css</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #d5b778;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #7a7e85;}
+.s6 { color: #bcbec4;}
+.s7 { color: #bababa;}
+.s8 { color: #56a8f5;}
+.s9 { color: #2aacb8;}
+.s10 { color: #cf8e6d; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+style.css</font>
+</center></td></tr></table>
+<pre><span class="s0">@import </span><span class="s2">url</span><span class="s3">(</span><span class="s4">'https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Mono:wght@300;400;500&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&amp;display=swap'</span><span class="s3">);</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   TOKENS &amp; VARIÁVEIS 
+══════════════════════════════════════ */</span>
+<span class="s6">:</span><span class="s2">root </span><span class="s3">{</span>
+    <span class="s7">--ink</span><span class="s6">:         </span><span class="s8">#04080F</span><span class="s3">;</span>
+    <span class="s7">--surface</span><span class="s6">:     </span><span class="s8">#070D1A</span><span class="s3">;</span>
+    <span class="s7">--card</span><span class="s6">:        </span><span class="s8">#0B1423</span><span class="s3">;</span>
+    <span class="s7">--card-hover</span><span class="s6">:  </span><span class="s8">#0F1B2D</span><span class="s3">;</span>
+    <span class="s7">--border</span><span class="s6">:      </span><span class="s8">#162236</span><span class="s3">;</span>
+    <span class="s7">--border-glow</span><span class="s6">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">212</span><span class="s3">,</span><span class="s9">255</span><span class="s3">,</span><span class="s9">0.25</span><span class="s3">);</span>
+    <span class="s7">--muted</span><span class="s6">:       </span><span class="s8">#243550</span><span class="s3">;</span>
+    <span class="s7">--text-dim</span><span class="s6">:    </span><span class="s8">#5A7899</span><span class="s3">;</span>
+    <span class="s7">--text</span><span class="s6">:        </span><span class="s8">#B8CCE4</span><span class="s3">;</span>
+    <span class="s7">--text-bright</span><span class="s6">: </span><span class="s8">#E8F2FF</span><span class="s3">;</span>
+    <span class="s7">--cyan</span><span class="s6">:        </span><span class="s8">#00C8F0</span><span class="s3">;</span>
+    <span class="s7">--cyan-soft</span><span class="s6">:   </span><span class="s8">#00C8F022</span><span class="s3">;</span>
+    <span class="s7">--cyan-glow</span><span class="s6">:   </span><span class="s8">#00C8F033</span><span class="s3">;</span>
+    <span class="s7">--emerald</span><span class="s6">:     </span><span class="s8">#00E896</span><span class="s3">;</span>
+    <span class="s7">--emerald-soft</span><span class="s6">:</span><span class="s8">#00E89615</span><span class="s3">;</span>
+    <span class="s7">--amber</span><span class="s6">:       </span><span class="s8">#F0A830</span><span class="s3">;</span>
+    <span class="s7">--amber-soft</span><span class="s6">:  </span><span class="s8">#F0A83015</span><span class="s3">;</span>
+    <span class="s7">--red</span><span class="s6">:         </span><span class="s8">#F04860</span><span class="s3">;</span>
+    <span class="s7">--red-soft</span><span class="s6">:    </span><span class="s8">#F0486015</span><span class="s3">;</span>
+    <span class="s7">--purple</span><span class="s6">:      </span><span class="s8">#8B5CF6</span><span class="s3">;</span>
+    <span class="s7">--purple-soft</span><span class="s6">: </span><span class="s8">#8B5CF615</span><span class="s3">;</span>
+    <span class="s7">--grid</span><span class="s6">:        </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">200</span><span class="s3">,</span><span class="s9">240</span><span class="s3">,</span><span class="s9">0.035</span><span class="s3">);</span>
+    <span class="s7">--radius</span><span class="s6">:      </span><span class="s9">12</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">--radius-lg</span><span class="s6">:   </span><span class="s9">18</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">--shadow</span><span class="s6">:      </span><span class="s9">0 8</span><span class="s4">px </span><span class="s9">32</span><span class="s4">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">0</span><span class="s3">,</span><span class="s9">0</span><span class="s3">,</span><span class="s9">0.4</span><span class="s3">);</span>
+    <span class="s7">--transition</span><span class="s6">:  </span><span class="s9">0.25</span><span class="s4">s </span><span class="s2">cubic-bezier</span><span class="s3">(</span><span class="s9">0.4</span><span class="s3">,</span><span class="s9">0</span><span class="s3">,</span><span class="s9">0.2</span><span class="s3">,</span><span class="s9">1</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   RESET &amp; BASE 
+══════════════════════════════════════ */</span>
+<span class="s2">*</span><span class="s3">, </span><span class="s2">*</span><span class="s6">::</span><span class="s2">before</span><span class="s3">, </span><span class="s2">*</span><span class="s6">::</span><span class="s2">after </span><span class="s3">{ </span><span class="s7">margin</span><span class="s6">:</span><span class="s9">0</span><span class="s3">; </span><span class="s7">padding</span><span class="s6">:</span><span class="s9">0</span><span class="s3">; </span><span class="s7">box-sizing</span><span class="s6">:</span><span class="s4">border-box</span><span class="s3">; }</span>
+
+<span class="s2">html </span><span class="s3">{ </span><span class="s7">scroll-behavior</span><span class="s6">: </span><span class="s4">smooth</span><span class="s3">; }</span>
+
+<span class="s2">body </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--ink</span><span class="s3">);</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text</span><span class="s3">);</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Sans'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">15</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">line-height</span><span class="s6">: </span><span class="s9">1.65</span><span class="s3">;</span>
+    <span class="s7">min-height</span><span class="s6">: </span><span class="s9">100</span><span class="s4">vh</span><span class="s3">;</span>
+    <span class="s7">overflow-x</span><span class="s6">: </span><span class="s4">hidden</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   BACKGROUND — GRID + ORBS 
+══════════════════════════════════════ */</span>
+<span class="s2">body</span><span class="s6">::</span><span class="s2">before </span><span class="s3">{</span>
+    <span class="s7">content</span><span class="s6">: </span><span class="s4">''</span><span class="s3">;</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">fixed</span><span class="s3">; </span><span class="s7">inset</span><span class="s6">: </span><span class="s9">0</span><span class="s3">;</span>
+    <span class="s7">background-image</span><span class="s6">:</span>
+            <span class="s2">linear-gradient</span><span class="s3">(</span><span class="s2">var</span><span class="s3">(</span><span class="s2">--grid</span><span class="s3">) </span><span class="s9">1</span><span class="s4">px</span><span class="s3">, </span><span class="s4">transparent </span><span class="s9">1</span><span class="s4">px</span><span class="s3">),</span>
+            <span class="s2">linear-gradient</span><span class="s3">(</span><span class="s9">90</span><span class="s4">deg</span><span class="s3">, </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--grid</span><span class="s3">) </span><span class="s9">1</span><span class="s4">px</span><span class="s3">, </span><span class="s4">transparent </span><span class="s9">1</span><span class="s4">px</span><span class="s3">);</span>
+    <span class="s7">background-size</span><span class="s6">: </span><span class="s9">44</span><span class="s4">px </span><span class="s9">44</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">pointer-events</span><span class="s6">: </span><span class="s4">none</span><span class="s3">;</span>
+    <span class="s7">z-index</span><span class="s6">: </span><span class="s9">0</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">orb </span><span class="s3">{</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">fixed</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">50</span><span class="s3">%;</span>
+    <span class="s7">filter</span><span class="s6">: </span><span class="s2">blur</span><span class="s3">(</span><span class="s9">130</span><span class="s4">px</span><span class="s3">);</span>
+    <span class="s7">pointer-events</span><span class="s6">: </span><span class="s4">none</span><span class="s3">;</span>
+    <span class="s7">z-index</span><span class="s6">: </span><span class="s9">0</span><span class="s3">;</span>
+    <span class="s7">will-change</span><span class="s6">: </span><span class="s4">transform</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">orb-1 </span><span class="s3">{</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">700</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">700</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">top</span><span class="s6">: </span><span class="s3">-</span><span class="s9">260</span><span class="s4">px</span><span class="s3">; </span><span class="s7">right</span><span class="s6">: </span><span class="s3">-</span><span class="s9">200</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">radial-gradient</span><span class="s3">(</span><span class="s4">circle</span><span class="s3">, </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">200</span><span class="s3">,</span><span class="s9">240</span><span class="s3">,</span><span class="s9">0.09</span><span class="s3">), </span><span class="s4">transparent </span><span class="s9">70</span><span class="s3">%);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">orb-2 </span><span class="s3">{</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">500</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">500</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">bottom</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">left</span><span class="s6">: </span><span class="s3">-</span><span class="s9">180</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">radial-gradient</span><span class="s3">(</span><span class="s4">circle</span><span class="s3">, </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">139</span><span class="s3">,</span><span class="s9">92</span><span class="s3">,</span><span class="s9">246</span><span class="s3">,</span><span class="s9">0.07</span><span class="s3">), </span><span class="s4">transparent </span><span class="s9">70</span><span class="s3">%);</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   LAYOUT 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">wrapper </span><span class="s3">{</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">; </span><span class="s7">z-index</span><span class="s6">: </span><span class="s9">1</span><span class="s3">;</span>
+    <span class="s7">max-width</span><span class="s6">: </span><span class="s9">1280</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">margin</span><span class="s6">: </span><span class="s9">0 </span><span class="s4">auto</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">40</span><span class="s4">px </span><span class="s9">28</span><span class="s4">px </span><span class="s9">80</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   NAVBAR 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">navbar </span><span class="s3">{</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">sticky</span><span class="s3">; </span><span class="s7">top</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">z-index</span><span class="s6">: </span><span class="s9">200</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">space-between</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">0 40</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">height</span><span class="s6">: </span><span class="s9">62</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">7</span><span class="s3">,</span><span class="s9">13</span><span class="s3">,</span><span class="s9">26</span><span class="s3">,</span><span class="s9">0.85</span><span class="s3">);</span>
+    <span class="s7">backdrop-filter</span><span class="s6">: </span><span class="s2">blur</span><span class="s3">(</span><span class="s9">16</span><span class="s4">px</span><span class="s3">) </span><span class="s2">saturate</span><span class="s3">(</span><span class="s9">180</span><span class="s3">%);</span>
+    <span class="s7">border-bottom</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">navbar</span><span class="s6">::</span><span class="s2">after </span><span class="s3">{</span>
+    <span class="s7">content</span><span class="s6">: </span><span class="s4">''</span><span class="s3">;</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">absolute</span><span class="s3">; </span><span class="s7">bottom</span><span class="s6">: </span><span class="s3">-</span><span class="s9">1</span><span class="s4">px</span><span class="s3">; </span><span class="s7">left</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">right</span><span class="s6">: </span><span class="s9">0</span><span class="s3">;</span>
+    <span class="s7">height</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">linear-gradient</span><span class="s3">(</span><span class="s9">90</span><span class="s4">deg</span><span class="s3">, </span><span class="s4">transparent</span><span class="s3">, </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">), </span><span class="s4">transparent</span><span class="s3">);</span>
+    <span class="s7">opacity</span><span class="s6">: </span><span class="s9">0.2</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">navbar-brand </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">800</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">1.3</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">);</span>
+    <span class="s7">text-decoration</span><span class="s6">: </span><span class="s4">none</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s3">-</span><span class="s9">0.3</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">navbar-brand span </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">); }</span>
+
+<span class="s3">.</span><span class="s2">navbar-brand </span><span class="s3">.</span><span class="s2">logo-icon </span><span class="s3">{</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">32</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">32</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-soft</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border-glow</span><span class="s3">);</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">center</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">navbar-nav </span><span class="s3">{ </span><span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px</span><span class="s3">; }</span>
+
+<span class="s3">.</span><span class="s2">nav-link </span><span class="s3">{</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">text-decoration</span><span class="s6">: </span><span class="s4">none</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.875</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">500</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">7</span><span class="s4">px </span><span class="s9">14</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">nav-link</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text</span><span class="s3">); </span><span class="s7">background</span><span class="s6">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">255</span><span class="s3">,</span><span class="s9">255</span><span class="s3">,</span><span class="s9">255</span><span class="s3">,</span><span class="s9">0.04</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">nav-link</span><span class="s3">.</span><span class="s2">active </span><span class="s3">{</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-soft</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">navbar-status </span><span class="s3">{</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.68</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">1.5</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald</span><span class="s3">);</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px </span><span class="s9">14</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald-soft</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">232</span><span class="s3">,</span><span class="s9">150</span><span class="s3">,</span><span class="s9">0.2</span><span class="s3">);</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">20</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   PULSE ANIMATION 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">pulse </span><span class="s3">{</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">7</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">7</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald</span><span class="s3">);</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">50</span><span class="s3">%;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">inline-block</span><span class="s3">;</span>
+    <span class="s7">animation</span><span class="s6">: </span><span class="s4">pulseAn </span><span class="s9">2</span><span class="s4">s ease-in-out infinite</span><span class="s3">;</span>
+    <span class="s7">flex-shrink</span><span class="s6">: </span><span class="s9">0</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">pulse</span><span class="s3">.</span><span class="s2">amber </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--amber</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">pulse</span><span class="s3">.</span><span class="s2">red </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red</span><span class="s3">); </span><span class="s7">animation</span><span class="s6">: </span><span class="s4">pulseRed </span><span class="s9">1</span><span class="s4">s ease-in-out infinite</span><span class="s3">; }</span>
+
+<span class="s0">@keyframes </span><span class="s2">pulseAn </span><span class="s3">{</span>
+    <span class="s2">0%</span><span class="s3">,</span><span class="s2">100% </span><span class="s3">{ </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">1</span><span class="s3">; </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 0 0 </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">232</span><span class="s3">,</span><span class="s9">150</span><span class="s3">,</span><span class="s9">0.4</span><span class="s3">); }</span>
+    <span class="s2">50%      </span><span class="s3">{ </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">0.6</span><span class="s3">; </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 0 4</span><span class="s4">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">232</span><span class="s3">,</span><span class="s9">150</span><span class="s3">,</span><span class="s9">0</span><span class="s3">); }</span>
+<span class="s3">}</span>
+<span class="s0">@keyframes </span><span class="s2">pulseRed </span><span class="s3">{</span>
+    <span class="s2">0%</span><span class="s3">,</span><span class="s2">100% </span><span class="s3">{ </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">1</span><span class="s3">; </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 0 0 </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">240</span><span class="s3">,</span><span class="s9">72</span><span class="s3">,</span><span class="s9">96</span><span class="s3">,</span><span class="s9">0.5</span><span class="s3">); }</span>
+    <span class="s2">50%      </span><span class="s3">{ </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">0.5</span><span class="s3">; </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 0 5</span><span class="s4">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">240</span><span class="s3">,</span><span class="s9">72</span><span class="s3">,</span><span class="s9">96</span><span class="s3">,</span><span class="s9">0</span><span class="s3">); }</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   PAGE HEADER 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">page-header </span><span class="s3">{</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">40</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">padding-bottom</span><span class="s6">: </span><span class="s9">28</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">border-bottom</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">section-label </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.68</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">3</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">section-label</span><span class="s6">::</span><span class="s2">after </span><span class="s3">{</span>
+    <span class="s7">content</span><span class="s6">: </span><span class="s4">''</span><span class="s3">;</span>
+    <span class="s7">flex</span><span class="s6">: </span><span class="s9">1</span><span class="s3">;</span>
+    <span class="s7">height</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">linear-gradient</span><span class="s3">(</span><span class="s4">to right</span><span class="s3">, </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">), </span><span class="s4">transparent</span><span class="s3">);</span>
+    <span class="s7">max-width</span><span class="s6">: </span><span class="s9">200</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">section-title </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">1.9</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">800</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">);</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s3">-</span><span class="s9">0.5</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">section-sub </span><span class="s3">{</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.9</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">max-width</span><span class="s6">: </span><span class="s9">500</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   CARDS 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">card </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--card</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--radius-lg</span><span class="s3">);</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">28</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">;</span>
+    <span class="s7">overflow</span><span class="s6">: </span><span class="s4">hidden</span><span class="s3">;</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s4">border-color </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">), </span><span class="s4">box-shadow </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">), </span><span class="s4">background </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">card</span><span class="s6">::</span><span class="s2">before </span><span class="s3">{</span>
+    <span class="s7">content</span><span class="s6">: </span><span class="s4">''</span><span class="s3">;</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">absolute</span><span class="s3">; </span><span class="s7">top</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">left</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">right</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">linear-gradient</span><span class="s3">(</span><span class="s9">90</span><span class="s4">deg</span><span class="s3">, </span><span class="s4">transparent</span><span class="s3">, </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">200</span><span class="s3">,</span><span class="s9">240</span><span class="s3">,</span><span class="s9">0.4</span><span class="s3">), </span><span class="s4">transparent</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">card</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">{</span>
+    <span class="s7">border-color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border-glow</span><span class="s3">);</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--card-hover</span><span class="s3">);</span>
+    <span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 40</span><span class="s4">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">200</span><span class="s3">,</span><span class="s9">240</span><span class="s3">,</span><span class="s9">0.04</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s5">/* Metric Cards */</span>
+<span class="s3">.</span><span class="s2">metric-card </span><span class="s3">{</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">;</span>
+    <span class="s7">overflow</span><span class="s6">: </span><span class="s4">hidden</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">metric-card </span><span class="s3">.</span><span class="s2">accent-line </span><span class="s3">{</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">absolute</span><span class="s3">; </span><span class="s7">left</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">top</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">bottom</span><span class="s6">: </span><span class="s9">0</span><span class="s3">;</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">3</span><span class="s4">px</span><span class="s3">; </span><span class="s7">border-radius</span><span class="s6">: </span><span class="s9">0 3</span><span class="s4">px </span><span class="s9">3</span><span class="s4">px </span><span class="s9">0</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">metric-card </span><span class="s3">.</span><span class="s2">m-label </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.63</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">2</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">padding-left</span><span class="s6">: </span><span class="s9">14</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">metric-card </span><span class="s3">.</span><span class="s2">m-value </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">1.7</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">700</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">);</span>
+    <span class="s7">padding-left</span><span class="s6">: </span><span class="s9">14</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">line-height</span><span class="s6">: </span><span class="s9">1</span><span class="s3">;</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">metric-card </span><span class="s3">.</span><span class="s2">m-delta </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.7</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">padding-left</span><span class="s6">: </span><span class="s9">14</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">metric-card </span><span class="s3">.</span><span class="s2">m-delta</span><span class="s3">.</span><span class="s2">up   </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">metric-card </span><span class="s3">.</span><span class="s2">m-delta</span><span class="s3">.</span><span class="s2">warn </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--amber</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">metric-card </span><span class="s3">.</span><span class="s2">m-delta</span><span class="s3">.</span><span class="s2">crit </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red</span><span class="s3">); }</span>
+
+<span class="s3">.</span><span class="s2">metric-card</span><span class="s3">.</span><span class="s2">c-cyan   </span><span class="s3">.</span><span class="s2">accent-line </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);    </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px </span><span class="s9">0 12</span><span class="s4">px </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-glow</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">metric-card</span><span class="s3">.</span><span class="s2">c-green  </span><span class="s3">.</span><span class="s2">accent-line </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald</span><span class="s3">); </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px </span><span class="s9">0 12</span><span class="s4">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">232</span><span class="s3">,</span><span class="s9">150</span><span class="s3">,</span><span class="s9">0.3</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">metric-card</span><span class="s3">.</span><span class="s2">c-amber  </span><span class="s3">.</span><span class="s2">accent-line </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--amber</span><span class="s3">);   </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px </span><span class="s9">0 12</span><span class="s4">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">240</span><span class="s3">,</span><span class="s9">168</span><span class="s3">,</span><span class="s9">48</span><span class="s3">,</span><span class="s9">0.3</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">metric-card</span><span class="s3">.</span><span class="s2">c-red    </span><span class="s3">.</span><span class="s2">accent-line </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red</span><span class="s3">);     </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px </span><span class="s9">0 12</span><span class="s4">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">240</span><span class="s3">,</span><span class="s9">72</span><span class="s3">,</span><span class="s9">96</span><span class="s3">,</span><span class="s9">0.3</span><span class="s3">); }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   GRID HELPERS 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">grid-4 </span><span class="s3">{ </span><span class="s7">display</span><span class="s6">: </span><span class="s4">grid</span><span class="s3">; </span><span class="s7">grid-template-columns</span><span class="s6">: </span><span class="s2">repeat</span><span class="s3">(</span><span class="s9">4</span><span class="s3">,</span><span class="s9">1</span><span class="s4">fr</span><span class="s3">); </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">18</span><span class="s4">px</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">grid-3 </span><span class="s3">{ </span><span class="s7">display</span><span class="s6">: </span><span class="s4">grid</span><span class="s3">; </span><span class="s7">grid-template-columns</span><span class="s6">: </span><span class="s2">repeat</span><span class="s3">(</span><span class="s9">3</span><span class="s3">,</span><span class="s9">1</span><span class="s4">fr</span><span class="s3">); </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">18</span><span class="s4">px</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">grid-2 </span><span class="s3">{ </span><span class="s7">display</span><span class="s6">: </span><span class="s4">grid</span><span class="s3">; </span><span class="s7">grid-template-columns</span><span class="s6">: </span><span class="s2">repeat</span><span class="s3">(</span><span class="s9">2</span><span class="s3">,</span><span class="s9">1</span><span class="s4">fr</span><span class="s3">); </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">18</span><span class="s4">px</span><span class="s3">; }</span>
+
+<span class="s0">@media </span><span class="s3">(</span><span class="s7">max-width</span><span class="s6">: </span><span class="s9">960</span><span class="s4">px</span><span class="s3">) { .</span><span class="s2">grid-4 </span><span class="s3">{ </span><span class="s7">grid-template-columns</span><span class="s6">: </span><span class="s2">repeat</span><span class="s3">(</span><span class="s9">2</span><span class="s3">,</span><span class="s9">1</span><span class="s4">fr</span><span class="s3">); } }</span>
+<span class="s0">@media </span><span class="s3">(</span><span class="s7">max-width</span><span class="s6">: </span><span class="s9">600</span><span class="s4">px</span><span class="s3">) { .</span><span class="s2">grid-4</span><span class="s3">,.</span><span class="s2">grid-3</span><span class="s3">,.</span><span class="s2">grid-2 </span><span class="s3">{ </span><span class="s7">grid-template-columns</span><span class="s6">: </span><span class="s9">1</span><span class="s4">fr</span><span class="s3">; } }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   FORMS 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">form-group </span><span class="s3">{ </span><span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">flex-direction</span><span class="s6">: </span><span class="s4">column</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px</span><span class="s3">; }</span>
+
+<span class="s3">.</span><span class="s2">form-label </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.68</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">1.5</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">form-control</span><span class="s3">, .</span><span class="s2">form-select </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--ink</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--radius</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">11</span><span class="s4">px </span><span class="s9">16</span><span class="s4">px </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Sans'</span><span class="s3">, </span><span class="s4">sans-serif </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.9</span><span class="s4">rem </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s4">border-color </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">), </span><span class="s4">box-shadow </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">outline</span><span class="s6">: </span><span class="s4">none </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">100</span><span class="s3">%;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">form-control</span><span class="s6">:</span><span class="s2">focus</span><span class="s3">, .</span><span class="s2">form-select</span><span class="s6">:</span><span class="s2">focus </span><span class="s3">{</span>
+    <span class="s7">border-color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">;</span>
+    <span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 0 3</span><span class="s4">px </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-soft</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">form-control</span><span class="s6">::</span><span class="s2">placeholder </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--muted</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">form-select option </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--card</span><span class="s3">); </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text</span><span class="s3">); }</span>
+
+<span class="s5">/* Bootstrap overrides */</span>
+<span class="s3">.</span><span class="s2">form-control</span><span class="s6">:</span><span class="s2">not</span><span class="s3">(</span><span class="s6">:</span><span class="s2">focus</span><span class="s3">) { </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s4">none </span><span class="s10">!important</span><span class="s3">; }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   BUTTONS 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">btn-primary</span><span class="s3">, .</span><span class="s2">btn-cyan </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--ink</span><span class="s3">);</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">700</span><span class="s3">;</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.82</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s4">none</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--radius</span><span class="s3">);</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">12</span><span class="s4">px </span><span class="s9">24</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">cursor</span><span class="s6">: </span><span class="s4">pointer</span><span class="s3">;</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">inline-flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-decoration</span><span class="s6">: </span><span class="s4">none</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">btn-primary</span><span class="s6">:</span><span class="s2">hover</span><span class="s3">, .</span><span class="s2">btn-cyan</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">{</span>
+    <span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 24</span><span class="s4">px </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-glow</span><span class="s3">), </span><span class="s9">0 4</span><span class="s4">px </span><span class="s9">16</span><span class="s4">px </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">0</span><span class="s3">,</span><span class="s9">0</span><span class="s3">,</span><span class="s9">0.3</span><span class="s3">);</span>
+    <span class="s7">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(-</span><span class="s9">1</span><span class="s4">px</span><span class="s3">);</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s8">#1AD6FF</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--ink</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">btn-primary</span><span class="s6">:</span><span class="s2">active</span><span class="s3">, .</span><span class="s2">btn-cyan</span><span class="s6">:</span><span class="s2">active </span><span class="s3">{ </span><span class="s7">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s9">0</span><span class="s3">); }</span>
+
+<span class="s3">.</span><span class="s2">btn-ghost </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s4">transparent</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.78</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">0.5</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--radius</span><span class="s3">);</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px </span><span class="s9">16</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">cursor</span><span class="s6">: </span><span class="s4">pointer</span><span class="s3">;</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">btn-ghost</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">{ </span><span class="s7">border-color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">); </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text</span><span class="s3">); }</span>
+
+<span class="s3">.</span><span class="s2">btn-danger </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s4">transparent</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">240</span><span class="s3">,</span><span class="s9">72</span><span class="s3">,</span><span class="s9">96</span><span class="s3">,</span><span class="s9">0.3</span><span class="s3">);</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.65</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px </span><span class="s9">10</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">cursor</span><span class="s6">: </span><span class="s4">pointer</span><span class="s3">;</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">btn-danger</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red-soft</span><span class="s3">);</span>
+    <span class="s7">border-color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   TABLE 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">table-wrapper </span><span class="s3">{</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--radius</span><span class="s3">);</span>
+    <span class="s7">overflow</span><span class="s6">: </span><span class="s4">hidden</span><span class="s3">;</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s2">table </span><span class="s3">{</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">100</span><span class="s3">%;</span>
+    <span class="s7">border-collapse</span><span class="s6">: </span><span class="s4">collapse</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">thead tr </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">200</span><span class="s3">,</span><span class="s9">240</span><span class="s3">,</span><span class="s9">0.04</span><span class="s3">);</span>
+    <span class="s7">border-bottom</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s2">th </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.65</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">2</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">14</span><span class="s4">px </span><span class="s9">18</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-align</span><span class="s6">: </span><span class="s4">left</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">500</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s2">td </span><span class="s3">{</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">14</span><span class="s4">px </span><span class="s9">18</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">border-bottom</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">22</span><span class="s3">,</span><span class="s9">34</span><span class="s3">,</span><span class="s9">54</span><span class="s3">,</span><span class="s9">0.7</span><span class="s3">);</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.875</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s4">background </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s2">tbody tr</span><span class="s6">:</span><span class="s2">hover td </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">200</span><span class="s3">,</span><span class="s9">240</span><span class="s3">,</span><span class="s9">0.02</span><span class="s3">); }</span>
+<span class="s2">tbody tr</span><span class="s6">:</span><span class="s2">last-child td </span><span class="s3">{ </span><span class="s7">border-bottom</span><span class="s6">: </span><span class="s4">none</span><span class="s3">; }</span>
+
+<span class="s3">.</span><span class="s2">td-id </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.8</span><span class="s4">rem</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">td-name </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">); </span><span class="s7">font-weight</span><span class="s6">: </span><span class="s9">600</span><span class="s3">; }</span>
+
+<span class="s5">/* Status badge */</span>
+<span class="s3">.</span><span class="s2">badge-active </span><span class="s3">{</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">inline-flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.65</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald</span><span class="s3">);</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald-soft</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">232</span><span class="s3">,</span><span class="s9">150</span><span class="s3">,</span><span class="s9">0.2</span><span class="s3">);</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">20</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">3</span><span class="s4">px </span><span class="s9">10</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   UPLOAD AREA 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">upload-area </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--surface</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1.5</span><span class="s4">px dashed </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--radius-lg</span><span class="s3">);</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">56</span><span class="s4">px </span><span class="s9">40</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-align</span><span class="s6">: </span><span class="s4">center</span><span class="s3">;</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+    <span class="s7">cursor</span><span class="s6">: </span><span class="s4">pointer</span><span class="s3">;</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">;</span>
+    <span class="s7">overflow</span><span class="s6">: </span><span class="s4">hidden</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">upload-area</span><span class="s6">::</span><span class="s2">before </span><span class="s3">{</span>
+    <span class="s7">content</span><span class="s6">: </span><span class="s4">''</span><span class="s3">;</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">absolute</span><span class="s3">; </span><span class="s7">inset</span><span class="s6">: </span><span class="s9">0</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">radial-gradient</span><span class="s3">(</span><span class="s4">ellipse at </span><span class="s9">50</span><span class="s3">% </span><span class="s9">0</span><span class="s3">%, </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-soft</span><span class="s3">), </span><span class="s4">transparent </span><span class="s9">70</span><span class="s3">%);</span>
+    <span class="s7">pointer-events</span><span class="s6">: </span><span class="s4">none</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">upload-area</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">{</span>
+    <span class="s7">border-color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">200</span><span class="s3">,</span><span class="s9">240</span><span class="s3">,</span><span class="s9">0.02</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">upload-area</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">.</span><span class="s2">upload-icon </span><span class="s3">{ </span><span class="s7">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(-</span><span class="s9">4</span><span class="s4">px</span><span class="s3">); }</span>
+
+<span class="s3">.</span><span class="s2">upload-icon </span><span class="s3">{</span>
+    <span class="s7">margin</span><span class="s6">: </span><span class="s9">0 </span><span class="s4">auto </span><span class="s9">20</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">64</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">64</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-soft</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border-glow</span><span class="s3">);</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">16</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">center</span><span class="s3">;</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s4">transform </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">upload-icon svg </span><span class="s3">{ </span><span class="s7">stroke</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">); }</span>
+
+<span class="s3">.</span><span class="s2">upload-title </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">1.1</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">700</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">);</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">upload-hint </span><span class="s3">{</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.85</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">24</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   RESULT / CODE BOX 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">result-box </span><span class="s3">{</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--ink</span><span class="s3">);</span>
+    <span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--radius-lg</span><span class="s3">);</span>
+    <span class="s7">overflow</span><span class="s6">: </span><span class="s4">hidden</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">result-header </span><span class="s3">{</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">space-between</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">14</span><span class="s4">px </span><span class="s9">20</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--card</span><span class="s3">);</span>
+    <span class="s7">border-bottom</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">result-header-title </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.72</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">2</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">result-dots </span><span class="s3">{ </span><span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">result-dot </span><span class="s3">{ </span><span class="s7">width</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px</span><span class="s3">; </span><span class="s7">border-radius</span><span class="s6">: </span><span class="s9">50</span><span class="s3">%; }</span>
+<span class="s3">.</span><span class="s2">dot-r </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s8">#FF5F57</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">dot-y </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s8">#FEBC2E</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">dot-g </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s8">#28C840</span><span class="s3">; }</span>
+
+<span class="s2">pre#resultado </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.82</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">24</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">min-height</span><span class="s6">: </span><span class="s9">180</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">overflow-x</span><span class="s6">: </span><span class="s4">auto</span><span class="s3">;</span>
+    <span class="s7">line-height</span><span class="s6">: </span><span class="s9">1.7</span><span class="s3">;</span>
+    <span class="s7">white-space</span><span class="s6">: </span><span class="s4">pre-wrap</span><span class="s3">;</span>
+    <span class="s7">word-break</span><span class="s6">: </span><span class="s4">break-word</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   AUTH / LOGIN CARDS 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">auth-wrapper </span><span class="s3">{</span>
+    <span class="s7">min-height</span><span class="s6">: </span><span class="s9">100</span><span class="s4">vh</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">center</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">40</span><span class="s4">px </span><span class="s9">20</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">; </span><span class="s7">z-index</span><span class="s6">: </span><span class="s9">1</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">auth-container </span><span class="s3">{</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">100</span><span class="s3">%;</span>
+    <span class="s7">max-width</span><span class="s6">: </span><span class="s9">900</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">grid</span><span class="s3">; </span><span class="s7">grid-template-columns</span><span class="s6">: </span><span class="s9">1</span><span class="s4">fr </span><span class="s9">1</span><span class="s4">fr</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">24</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s0">@media </span><span class="s3">(</span><span class="s7">max-width</span><span class="s6">: </span><span class="s9">700</span><span class="s4">px</span><span class="s3">) { .</span><span class="s2">auth-container </span><span class="s3">{ </span><span class="s7">grid-template-columns</span><span class="s6">: </span><span class="s9">1</span><span class="s4">fr</span><span class="s3">; } }</span>
+
+<span class="s3">.</span><span class="s2">auth-card-title </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">1.2</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">700</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">);</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">20</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">auth-brand </span><span class="s3">{</span>
+    <span class="s7">text-align</span><span class="s6">: </span><span class="s4">center</span><span class="s3">;</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">40</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">auth-brand-name </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">800</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">2</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">);</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s3">-</span><span class="s9">0.5</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">auth-brand-name span </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">auth-brand-tag </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.68</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">3</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">margin-top</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   CHART CARD 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">chart-card-header </span><span class="s3">{</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">space-between</span><span class="s3">;</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">20</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">chart-card-title </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">1</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">700</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">chart-card-sub </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.65</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">margin-top</span><span class="s6">: </span><span class="s9">2</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">chart-legend </span><span class="s3">{</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">16</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">chart-legend-item </span><span class="s3">{</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.65</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">legend-dot </span><span class="s3">{ </span><span class="s7">width</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">8</span><span class="s4">px</span><span class="s3">; </span><span class="s7">border-radius</span><span class="s6">: </span><span class="s9">50</span><span class="s3">%; }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   ALERT FEED 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">alert-feed-title </span><span class="s3">{</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'Syne'</span><span class="s3">, </span><span class="s4">sans-serif</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.9</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">font-weight</span><span class="s6">: </span><span class="s9">700</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-bright</span><span class="s3">);</span>
+    <span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">16</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">space-between</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">alert-item </span><span class="s3">{</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">12</span><span class="s4">px</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">flex-start</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px </span><span class="s9">0</span><span class="s3">;</span>
+    <span class="s7">border-bottom</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+    <span class="s7">transition</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--transition</span><span class="s3">);</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">alert-item</span><span class="s6">:</span><span class="s2">last-child </span><span class="s3">{ </span><span class="s7">border-bottom</span><span class="s6">: </span><span class="s4">none</span><span class="s3">; </span><span class="s7">padding-bottom</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">alert-item</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">{ </span><span class="s7">padding-left</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px</span><span class="s3">; }</span>
+
+<span class="s3">.</span><span class="s2">alert-icon </span><span class="s3">{</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">28</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">28</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">7</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">center</span><span class="s3">;</span>
+    <span class="s7">flex-shrink</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">margin-top</span><span class="s6">: </span><span class="s9">2</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">alert-icon</span><span class="s3">.</span><span class="s2">crit </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red-soft</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">alert-icon</span><span class="s3">.</span><span class="s2">warn </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--amber-soft</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">alert-icon</span><span class="s3">.</span><span class="s2">info </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-soft</span><span class="s3">); }</span>
+
+<span class="s3">.</span><span class="s2">alert-sev </span><span class="s3">{</span>
+    <span class="s7">width</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">50</span><span class="s3">%;</span>
+    <span class="s7">margin</span><span class="s6">: </span><span class="s4">auto</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">alert-sev</span><span class="s3">.</span><span class="s2">crit </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red</span><span class="s3">);   </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 6</span><span class="s4">px </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">alert-sev</span><span class="s3">.</span><span class="s2">warn </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--amber</span><span class="s3">); </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 6</span><span class="s4">px </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--amber</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">alert-sev</span><span class="s3">.</span><span class="s2">info </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);  </span><span class="s7">box-shadow</span><span class="s6">: </span><span class="s9">0 0 6</span><span class="s4">px </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">); }</span>
+
+<span class="s3">.</span><span class="s2">alert-msg </span><span class="s3">{ </span><span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.82</span><span class="s4">rem</span><span class="s3">; </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text</span><span class="s3">); </span><span class="s7">line-height</span><span class="s6">: </span><span class="s9">1.4</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">alert-meta </span><span class="s3">{ </span><span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">; </span><span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.65</span><span class="s4">rem</span><span class="s3">; </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">); </span><span class="s7">margin-top</span><span class="s6">: </span><span class="s9">2</span><span class="s4">px</span><span class="s3">; }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   SCAN ANIMATION (for logo/icons) 
+══════════════════════════════════════ */</span>
+<span class="s0">@keyframes </span><span class="s2">scanline </span><span class="s3">{</span>
+    <span class="s2">0%   </span><span class="s3">{ </span><span class="s7">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(-</span><span class="s9">8</span><span class="s4">px</span><span class="s3">); </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; }</span>
+    <span class="s2">10%  </span><span class="s3">{ </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">0.7</span><span class="s3">; }</span>
+    <span class="s2">90%  </span><span class="s3">{ </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">0.7</span><span class="s3">; }</span>
+    <span class="s2">100% </span><span class="s3">{ </span><span class="s7">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s9">40</span><span class="s4">px</span><span class="s3">); </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; }</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">scan-anim </span><span class="s3">{</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">relative</span><span class="s3">; </span><span class="s7">overflow</span><span class="s6">: </span><span class="s4">hidden</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">scan-anim</span><span class="s6">::</span><span class="s2">after </span><span class="s3">{</span>
+    <span class="s7">content</span><span class="s6">: </span><span class="s4">''</span><span class="s3">;</span>
+    <span class="s7">position</span><span class="s6">: </span><span class="s4">absolute</span><span class="s3">; </span><span class="s7">left</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">right</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">2</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">background</span><span class="s6">: </span><span class="s2">linear-gradient</span><span class="s3">(</span><span class="s4">to right</span><span class="s3">, </span><span class="s4">transparent</span><span class="s3">, </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">), </span><span class="s4">transparent</span><span class="s3">);</span>
+    <span class="s7">animation</span><span class="s6">: </span><span class="s4">scanline </span><span class="s9">2.5</span><span class="s4">s linear infinite</span><span class="s3">;</span>
+    <span class="s7">top</span><span class="s6">: </span><span class="s9">0</span><span class="s3">;</span>
+<span class="s3">}</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   ENTRY ANIMATIONS 
+══════════════════════════════════════ */</span>
+<span class="s0">@keyframes </span><span class="s2">fadeUp </span><span class="s3">{</span>
+    <span class="s2">from </span><span class="s3">{ </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">0</span><span class="s3">; </span><span class="s7">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s9">18</span><span class="s4">px</span><span class="s3">); }</span>
+    <span class="s2">to   </span><span class="s3">{ </span><span class="s7">opacity</span><span class="s6">: </span><span class="s9">1</span><span class="s3">; </span><span class="s7">transform</span><span class="s6">: </span><span class="s2">translateY</span><span class="s3">(</span><span class="s9">0</span><span class="s3">); }</span>
+<span class="s3">}</span>
+
+<span class="s3">.</span><span class="s2">fade-up </span><span class="s3">{</span>
+    <span class="s7">animation</span><span class="s6">: </span><span class="s4">fadeUp </span><span class="s9">0.55</span><span class="s4">s </span><span class="s2">cubic-bezier</span><span class="s3">(</span><span class="s9">0.4</span><span class="s3">,</span><span class="s9">0</span><span class="s3">,</span><span class="s9">0.2</span><span class="s3">,</span><span class="s9">1</span><span class="s3">) </span><span class="s4">both</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">fade-up-1 </span><span class="s3">{ </span><span class="s7">animation-delay</span><span class="s6">: </span><span class="s9">0.05</span><span class="s4">s</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">fade-up-2 </span><span class="s3">{ </span><span class="s7">animation-delay</span><span class="s6">: </span><span class="s9">0.12</span><span class="s4">s</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">fade-up-3 </span><span class="s3">{ </span><span class="s7">animation-delay</span><span class="s6">: </span><span class="s9">0.19</span><span class="s4">s</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">fade-up-4 </span><span class="s3">{ </span><span class="s7">animation-delay</span><span class="s6">: </span><span class="s9">0.26</span><span class="s4">s</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">fade-up-5 </span><span class="s3">{ </span><span class="s7">animation-delay</span><span class="s6">: </span><span class="s9">0.33</span><span class="s4">s</span><span class="s3">; }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   TOOLTIP BADGE 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">tag </span><span class="s3">{</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">inline-flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">;</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.65</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">letter-spacing</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">text-transform</span><span class="s6">: </span><span class="s4">uppercase</span><span class="s3">;</span>
+    <span class="s7">border-radius</span><span class="s6">: </span><span class="s9">4</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">padding</span><span class="s6">: </span><span class="s9">3</span><span class="s4">px </span><span class="s9">9</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">tag-cyan   </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan</span><span class="s3">);    </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--cyan-soft</span><span class="s3">);   </span><span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">200</span><span class="s3">,</span><span class="s9">240</span><span class="s3">,</span><span class="s9">0.2</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">tag-green  </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald</span><span class="s3">); </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--emerald-soft</span><span class="s3">);</span><span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">0</span><span class="s3">,</span><span class="s9">232</span><span class="s3">,</span><span class="s9">150</span><span class="s3">,</span><span class="s9">0.2</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">tag-amber  </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--amber</span><span class="s3">);   </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--amber-soft</span><span class="s3">);  </span><span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">240</span><span class="s3">,</span><span class="s9">168</span><span class="s3">,</span><span class="s9">48</span><span class="s3">,</span><span class="s9">0.2</span><span class="s3">); }</span>
+<span class="s3">.</span><span class="s2">tag-red    </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red</span><span class="s3">);     </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--red-soft</span><span class="s3">);    </span><span class="s7">border</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">rgba</span><span class="s3">(</span><span class="s9">240</span><span class="s3">,</span><span class="s9">72</span><span class="s3">,</span><span class="s9">96</span><span class="s3">,</span><span class="s9">0.2</span><span class="s3">); }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   DIVIDERS 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">divider </span><span class="s3">{ </span><span class="s7">border</span><span class="s6">: </span><span class="s4">none</span><span class="s3">; </span><span class="s7">border-top</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">); </span><span class="s7">margin</span><span class="s6">: </span><span class="s9">32</span><span class="s4">px </span><span class="s9">0</span><span class="s3">; }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   FOOTER 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">page-footer </span><span class="s3">{</span>
+    <span class="s7">margin-top</span><span class="s6">: </span><span class="s9">60</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">padding-top</span><span class="s6">: </span><span class="s9">24</span><span class="s4">px</span><span class="s3">;</span>
+    <span class="s7">border-top</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">);</span>
+    <span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">center</span><span class="s3">; </span><span class="s7">justify-content</span><span class="s6">: </span><span class="s4">space-between</span><span class="s3">;</span>
+    <span class="s7">font-family</span><span class="s6">: </span><span class="s4">'DM Mono'</span><span class="s3">, </span><span class="s4">monospace</span><span class="s3">;</span>
+    <span class="s7">font-size</span><span class="s6">: </span><span class="s9">0.68</span><span class="s4">rem</span><span class="s3">;</span>
+    <span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">);</span>
+    <span class="s7">flex-wrap</span><span class="s6">: </span><span class="s4">wrap</span><span class="s3">; </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">12</span><span class="s4">px</span><span class="s3">;</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">page-footer strong </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text</span><span class="s3">); }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   SCROLLBAR 
+══════════════════════════════════════ */</span>
+<span class="s6">::</span><span class="s2">-webkit-scrollbar </span><span class="s3">{ </span><span class="s7">width</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">; </span><span class="s7">height</span><span class="s6">: </span><span class="s9">6</span><span class="s4">px</span><span class="s3">; }</span>
+<span class="s6">::</span><span class="s2">-webkit-scrollbar-track </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--ink</span><span class="s3">); }</span>
+<span class="s6">::</span><span class="s2">-webkit-scrollbar-thumb </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">); </span><span class="s7">border-radius</span><span class="s6">: </span><span class="s9">3</span><span class="s4">px</span><span class="s3">; }</span>
+<span class="s6">::</span><span class="s2">-webkit-scrollbar-thumb</span><span class="s6">:</span><span class="s2">hover </span><span class="s3">{ </span><span class="s7">background</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--muted</span><span class="s3">); }</span>
+
+<span class="s5">/* ══════════════════════════════════════ 
+   BOOTSTRAP OVERRIDES 
+══════════════════════════════════════ */</span>
+<span class="s3">.</span><span class="s2">mb-3 </span><span class="s3">{ </span><span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">14</span><span class="s4">px </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">mb-4 </span><span class="s3">{ </span><span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">24</span><span class="s4">px </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">mb-5 </span><span class="s3">{ </span><span class="s7">margin-bottom</span><span class="s6">: </span><span class="s9">36</span><span class="s4">px </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">mt-5 </span><span class="s3">{ </span><span class="s7">margin-top</span><span class="s6">: </span><span class="s9">48</span><span class="s4">px </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">g-3 </span><span class="s3">{ </span><span class="s7">gap</span><span class="s6">: </span><span class="s9">16</span><span class="s4">px </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">w-100 </span><span class="s3">{ </span><span class="s7">width</span><span class="s6">: </span><span class="s9">100</span><span class="s3">% </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">d-flex </span><span class="s3">{ </span><span class="s7">display</span><span class="s6">: </span><span class="s4">flex </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">align-items-end </span><span class="s3">{ </span><span class="s7">align-items</span><span class="s6">: </span><span class="s4">flex-end </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">text-muted </span><span class="s3">{ </span><span class="s7">color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--text-dim</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">border-bottom </span><span class="s3">{ </span><span class="s7">border-bottom</span><span class="s6">: </span><span class="s9">1</span><span class="s4">px solid </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">border-secondary </span><span class="s3">{ </span><span class="s7">border-color</span><span class="s6">: </span><span class="s2">var</span><span class="s3">(</span><span class="s2">--border</span><span class="s3">) </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">pb-2 </span><span class="s3">{ </span><span class="s7">padding-bottom</span><span class="s6">: </span><span class="s9">10</span><span class="s4">px </span><span class="s10">!important</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">row </span><span class="s3">{ </span><span class="s7">display</span><span class="s6">: </span><span class="s4">flex</span><span class="s3">; </span><span class="s7">flex-wrap</span><span class="s6">: </span><span class="s4">wrap</span><span class="s3">; </span><span class="s7">margin</span><span class="s6">: </span><span class="s9">0 </span><span class="s3">-</span><span class="s9">8</span><span class="s4">px</span><span class="s3">; }</span>
+<span class="s3">.</span><span class="s2">col-md-3</span><span class="s3">, .</span><span class="s2">col-md-4</span><span class="s3">, .</span><span class="s2">col-md-6 </span><span class="s3">{ </span><span class="s7">padding</span><span class="s6">: </span><span class="s9">0 8</span><span class="s4">px</span><span class="s3">; }</span>
+<span class="s0">@media </span><span class="s3">(</span><span class="s7">min-width</span><span class="s6">: </span><span class="s9">768</span><span class="s4">px</span><span class="s3">) {</span>
+    <span class="s3">.</span><span class="s2">col-md-3 </span><span class="s3">{ </span><span class="s7">width</span><span class="s6">: </span><span class="s9">25</span><span class="s3">%; }</span>
+    <span class="s3">.</span><span class="s2">col-md-4 </span><span class="s3">{ </span><span class="s7">width</span><span class="s6">: </span><span class="s9">33.33</span><span class="s3">%; }</span>
+    <span class="s3">.</span><span class="s2">col-md-6 </span><span class="s3">{ </span><span class="s7">width</span><span class="s6">: </span><span class="s9">50</span><span class="s3">%; }</span>
+<span class="s3">}</span>
+<span class="s0">@media </span><span class="s3">(</span><span class="s7">max-width</span><span class="s6">: </span><span class="s9">767</span><span class="s4">px</span><span class="s3">) {</span>
+    <span class="s3">.</span><span class="s2">col-md-3</span><span class="s3">, .</span><span class="s2">col-md-4</span><span class="s3">, .</span><span class="s2">col-md-6 </span><span class="s3">{ </span><span class="s7">width</span><span class="s6">: </span><span class="s9">100</span><span class="s3">%; }</span>
+<span class="s3">}</span>
+<span class="s3">.</span><span class="s2">table-responsive </span><span class="s3">{ </span><span class="s7">overflow-x</span><span class="s6">: </span><span class="s4">auto</span><span class="s3">; }</span></pre>
+</body>
+</html>

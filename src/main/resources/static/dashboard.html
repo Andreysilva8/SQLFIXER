@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQLFixer | Painel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html">
+        <span class="logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path d="M12 2 22 7v10l-10 5-10-5V7l10-5Z"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+        </span>
+        MySQL<span>Fixer</span>
+    </a>
+    <div class="navbar-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link active">Painel</a>
+        <a href="analyze.html" class="nav-link">Análises</a>
+        <a href="cadastro.html" class="nav-link">Usuários</a>
+        <a href="auth.html" class="nav-link">Acesso</a>
+    </div>
+    <div class="navbar-actions">
+        <div class="navbar-status"><span class="pulse amber"></span>AGUARDANDO CONEXÃO</div>
+    </div>
+</nav>
+
+<main class="wrapper">
+    <header class="page-header">
+        <div>
+            <div class="section-label">Operations</div>
+            <h1 class="section-title">Painel operacional</h1>
+            <p class="section-sub">Acompanhe conexão ativa, alertas, score de risco, usuários e o último relatório de anomalias.</p>
+        </div>
+        <div class="page-actions">
+            <span class="tag tag-blue" data-db-status>Sem conexão</span>
+            <button class="btn-cyan" type="button" id="run-db-scan">Executar varredura</button>
+        </div>
+    </header>
+
+    <section class="grid-4" style="margin-bottom:16px;">
+        <article class="card metric-card c-cyan">
+            <div class="accent-line"></div>
+            <div class="m-label">Risco</div>
+            <div class="m-value" data-metric="risk">0</div>
+            <div class="m-delta">Score 0-100</div>
+        </article>
+        <article class="card metric-card c-green">
+            <div class="accent-line"></div>
+            <div class="m-label">Tabelas</div>
+            <div class="m-value" data-metric="tables">--</div>
+            <div class="m-delta up">Schema conectado</div>
+        </article>
+        <article class="card metric-card c-amber">
+            <div class="accent-line"></div>
+            <div class="m-label">Issues</div>
+            <div class="m-value" data-metric="issues">0</div>
+            <div class="m-delta warn">Última varredura</div>
+        </article>
+        <article class="card metric-card c-red">
+            <div class="accent-line"></div>
+            <div class="m-label">Alertas</div>
+            <div class="m-value" data-alert-count>0</div>
+            <div class="m-delta crit">Notificáveis</div>
+        </article>
+    </section>
+
+    <section class="grid-2">
+        <div class="panel">
+            <div class="panel-header" style="margin-bottom:16px;">
+                <div>
+                    <div class="panel-title">Saúde do banco</div>
+                    <div class="panel-sub">Resumo da conexão e da varredura estrutural.</div>
+                </div>
+                <span class="tag tag-cyan">Live</span>
+            </div>
+            <div id="connection-status-card" class="db-row" style="grid-template-columns:1fr;">
+                <div class="status-line"><span class="pulse amber"></span><strong>Sem conexão</strong></div>
+            </div>
+            <div class="result-box" style="margin-top:16px;">
+                <div class="result-header">
+                    <div class="result-header-title">Último relatório</div>
+                </div>
+                <pre id="db-scan-output">Execute uma varredura para preencher o painel.</pre>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="alert-feed-title">
+                <span>Alertas recentes</span>
+                <span class="tag tag-red"><span data-alert-count>0</span> abertos</span>
+            </div>
+            <div id="latest-alerts" class="alert-list">
+                <div class="empty-state">Nenhum alerta crítico no momento.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel" style="margin-top:16px;">
+        <div class="panel-header" style="margin-bottom:16px;">
+            <div>
+                <div class="panel-title">Anomalias e correções</div>
+                <div class="panel-sub">Itens de schema, segurança, performance e qualidade de dados.</div>
+            </div>
+            <a class="btn-ghost" href="analyze.html">Abrir laboratório SQL</a>
+        </div>
+        <div id="db-report" class="issue-list">
+            <div class="empty-state">Nenhuma varredura executada nesta sessão.</div>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+        <span>MySQL<strong>Fixer</strong> · Painel operacional</span>
+        <span id="last-update">Atualização automática ativa</span>
+    </footer>
+</main>
+</body>
+</html>

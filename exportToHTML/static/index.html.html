@@ -1,0 +1,219 @@
+<html>
+<head>
+<title>index.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+.s6 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+index.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;pt-BR&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s2">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s1">MySQLFixer | Command Center</span><span class="s0">&lt;/title&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">href</span><span class="s3">=&quot;style.css&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;script </span><span class="s2">src</span><span class="s3">=&quot;https://cdn.jsdelivr.net/npm/chart.js&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;orb orb-1&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;orb orb-2&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+
+<span class="s4">&lt;!-- ══ NAVBAR ══ --&gt;</span>
+<span class="s0">&lt;nav </span><span class="s2">class</span><span class="s3">=&quot;navbar&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;a </span><span class="s2">class</span><span class="s3">=&quot;navbar-brand&quot; </span><span class="s2">href</span><span class="s3">=&quot;index.html&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;logo-icon scan-anim&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;18&quot; </span><span class="s2">height</span><span class="s3">=&quot;18&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;#00C8F0&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;2&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;path </span><span class="s2">d</span><span class="s3">=&quot;M12 2L22 7V17L12 22L2 17V7L12 2Z&quot;</span><span class="s0">/&gt;</span>
+                <span class="s0">&lt;circle </span><span class="s2">cx</span><span class="s3">=&quot;12&quot; </span><span class="s2">cy</span><span class="s3">=&quot;12&quot; </span><span class="s2">r</span><span class="s3">=&quot;4&quot;</span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;/svg&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+        <span class="s1">MySQL</span><span class="s0">&lt;span&gt;</span><span class="s1">Fixer</span><span class="s0">&lt;/span&gt;</span>
+    <span class="s0">&lt;/a&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;navbar-nav&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;index.html&quot;      </span><span class="s2">class</span><span class="s3">=&quot;nav-link active&quot;</span><span class="s0">&gt;</span><span class="s1">Home</span><span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;dashboard.html&quot;  </span><span class="s2">class</span><span class="s3">=&quot;nav-link&quot;</span><span class="s0">&gt;</span><span class="s1">Painel</span><span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;analyze.html&quot;    </span><span class="s2">class</span><span class="s3">=&quot;nav-link&quot;</span><span class="s0">&gt;</span><span class="s1">Análises</span><span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;cadastro.html&quot;   </span><span class="s2">class</span><span class="s3">=&quot;nav-link&quot;</span><span class="s0">&gt;</span><span class="s1">Usuários</span><span class="s0">&lt;/a&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;navbar-status&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;pulse&quot;</span><span class="s0">&gt;&lt;/span&gt;</span>
+        <span class="s1">MONITORAMENTO ATIVO</span>
+    <span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/nav&gt;</span>
+
+<span class="s4">&lt;!-- ══ MAIN ══ --&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;wrapper&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s4">&lt;!-- Page Header --&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;page-header fade-up&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;section-label&quot;</span><span class="s0">&gt;</span><span class="s1">01 — Overview</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;h1 </span><span class="s2">class</span><span class="s3">=&quot;section-title&quot;</span><span class="s0">&gt;</span><span class="s1">Command Center</span><span class="s0">&lt;/h1&gt;</span>
+        <span class="s0">&lt;p </span><span class="s2">class</span><span class="s3">=&quot;section-sub&quot;</span><span class="s0">&gt;</span><span class="s1">Visão em tempo real das operações, anomalias e saúde dos seus bancos de dados.</span><span class="s0">&lt;/p&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s4">&lt;!-- Metric Cards --&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;grid-4&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s5">28</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card metric-card c-cyan fade-up fade-up-1&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;accent-line&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-label&quot;</span><span class="s0">&gt;</span><span class="s1">Queries / s</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-value&quot; </span><span class="s2">id</span><span class="s3">=&quot;query-val&quot;</span><span class="s0">&gt;</span><span class="s1">24.8K</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-delta up&quot;</span><span class="s0">&gt;</span><span class="s1">↑ +12% hoje</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card metric-card c-green fade-up fade-up-2&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;accent-line&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-label&quot;</span><span class="s0">&gt;</span><span class="s1">Bancos Ativos</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-value&quot;</span><span class="s0">&gt;</span><span class="s1">04</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-delta up&quot;</span><span class="s0">&gt;</span><span class="s1">Todos online</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card metric-card c-amber fade-up fade-up-3&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;accent-line&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-label&quot;</span><span class="s0">&gt;</span><span class="s1">Alertas Abertos</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-value&quot;</span><span class="s0">&gt;</span><span class="s1">07</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-delta warn&quot;</span><span class="s0">&gt;</span><span class="s1">3 novos hoje</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card metric-card c-red fade-up fade-up-4&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;accent-line&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-label&quot;</span><span class="s0">&gt;</span><span class="s1">Usuários</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-value&quot; </span><span class="s2">id</span><span class="s3">=&quot;user-count&quot;</span><span class="s0">&gt;</span><span class="s1">--</span><span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;m-delta crit&quot;</span><span class="s0">&gt;</span><span class="s1">1 anomalia crítica</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s4">&lt;!-- Chart + Alert Feed --&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;grid-2&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">margin-bottom</span><span class="s1">: </span><span class="s5">28</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card fade-up fade-up-2&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">grid-column</span><span class="s1">: </span><span class="s3">span </span><span class="s5">1</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;chart-card-header&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;chart-card-title&quot;</span><span class="s0">&gt;</span><span class="s1">Frequência de Anomalias</span><span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;chart-card-sub&quot;</span><span class="s0">&gt;</span><span class="s1">Últimas 24 horas · Atualização contínua</span><span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;chart-legend&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;chart-legend-item&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;legend-dot&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">background</span><span class="s1">:</span><span class="s0">var</span><span class="s1">(</span><span class="s0">--cyan</span><span class="s1">);</span><span class="s3">&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                        <span class="s1">Anomalias</span>
+                    <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;canvas </span><span class="s2">id</span><span class="s3">=&quot;mainChart&quot; </span><span class="s2">height</span><span class="s3">=&quot;110&quot;</span><span class="s0">&gt;&lt;/canvas&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+
+        <span class="s4">&lt;!-- Alert Feed --&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card fade-up fade-up-3&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-feed-title&quot;</span><span class="s0">&gt;</span>
+                <span class="s1">Alertas Recentes</span>
+                <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;tag tag-red&quot;</span><span class="s0">&gt;</span><span class="s1">7 abertos</span><span class="s0">&lt;/span&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-item&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-icon crit&quot;</span><span class="s0">&gt;&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-sev crit&quot;</span><span class="s0">&gt;&lt;/div&gt;&lt;/div&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-msg&quot;</span><span class="s0">&gt;</span><span class="s1">SQL Injection detectado · prod-db-01</span><span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-meta&quot;</span><span class="s0">&gt;</span><span class="s1">09:14:33 · CRÍTICO</span><span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-item&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-icon warn&quot;</span><span class="s0">&gt;&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-sev warn&quot;</span><span class="s0">&gt;&lt;/div&gt;&lt;/div&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-msg&quot;</span><span class="s0">&gt;</span><span class="s1">Volume incomum de queries · analytics</span><span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-meta&quot;</span><span class="s0">&gt;</span><span class="s1">08:52:11 · ATENÇÃO</span><span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-item&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-icon warn&quot;</span><span class="s0">&gt;&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-sev warn&quot;</span><span class="s0">&gt;&lt;/div&gt;&lt;/div&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-msg&quot;</span><span class="s0">&gt;</span><span class="s1">Latência acima do baseline · repl-02</span><span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-meta&quot;</span><span class="s0">&gt;</span><span class="s1">07:30:07 · ATENÇÃO</span><span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-item&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-icon info&quot;</span><span class="s0">&gt;&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-sev info&quot;</span><span class="s0">&gt;&lt;/div&gt;&lt;/div&gt;</span>
+                <span class="s0">&lt;div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-msg&quot;</span><span class="s0">&gt;</span><span class="s1">Novo padrão de acesso registrado</span><span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alert-meta&quot;</span><span class="s0">&gt;</span><span class="s1">06:10:44 · INFO</span><span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">margin-top</span><span class="s1">:</span><span class="s5">16</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;dashboard.html&quot; </span><span class="s2">class</span><span class="s3">=&quot;btn-ghost&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">width</span><span class="s1">:</span><span class="s5">100</span><span class="s1">%;</span><span class="s2">text-align</span><span class="s1">:</span><span class="s3">center</span><span class="s1">;</span><span class="s2">display</span><span class="s1">:</span><span class="s3">block</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s1">Ver todos os alertas →</span><span class="s0">&lt;/a&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s4">&lt;!-- Footer --&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;page-footer&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;span&gt;</span><span class="s1">MySQL</span><span class="s0">&lt;strong&gt;</span><span class="s1">Fixer</span><span class="s0">&lt;/strong&gt; </span><span class="s1">· Command Center</span><span class="s0">&lt;/span&gt;</span>
+        <span class="s0">&lt;span&gt;</span><span class="s1">Sistema de Detecção de Anomalias · v2.0</span><span class="s0">&lt;/span&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;script&gt;</span>
+    <span class="s4">/* ── CHART ── */</span>
+    <span class="s6">const </span><span class="s1">ctx = document.getElementById(</span><span class="s3">'mainChart'</span><span class="s1">).getContext(</span><span class="s3">'2d'</span><span class="s1">);</span>
+    <span class="s6">new </span><span class="s1">Chart(ctx, {</span>
+        <span class="s1">type: </span><span class="s3">'line'</span><span class="s1">,</span>
+        <span class="s1">data: {</span>
+            <span class="s1">labels: [</span><span class="s3">'00h'</span><span class="s1">,</span><span class="s3">'02h'</span><span class="s1">,</span><span class="s3">'04h'</span><span class="s1">,</span><span class="s3">'06h'</span><span class="s1">,</span><span class="s3">'08h'</span><span class="s1">,</span><span class="s3">'10h'</span><span class="s1">,</span><span class="s3">'12h'</span><span class="s1">,</span><span class="s3">'14h'</span><span class="s1">,</span><span class="s3">'16h'</span><span class="s1">,</span><span class="s3">'18h'</span><span class="s1">,</span><span class="s3">'20h'</span><span class="s1">,</span><span class="s3">'22h'</span><span class="s1">],</span>
+            <span class="s1">datasets: [{</span>
+                <span class="s1">label: </span><span class="s3">'Anomalias'</span><span class="s1">,</span>
+                <span class="s1">data: [</span><span class="s5">1</span><span class="s1">, </span><span class="s5">2</span><span class="s1">, </span><span class="s5">1</span><span class="s1">, </span><span class="s5">3</span><span class="s1">, </span><span class="s5">5</span><span class="s1">, </span><span class="s5">3</span><span class="s1">, </span><span class="s5">8</span><span class="s1">, </span><span class="s5">4</span><span class="s1">, </span><span class="s5">2</span><span class="s1">, </span><span class="s5">6</span><span class="s1">, </span><span class="s5">3</span><span class="s1">, </span><span class="s5">4</span><span class="s1">],</span>
+                <span class="s1">borderColor: </span><span class="s3">'#00C8F0'</span><span class="s1">,</span>
+                <span class="s1">backgroundColor: </span><span class="s3">'rgba(0,200,240,0.08)'</span><span class="s1">,</span>
+                <span class="s1">fill: </span><span class="s6">true</span><span class="s1">,</span>
+                <span class="s1">tension: </span><span class="s5">0.45</span><span class="s1">,</span>
+                <span class="s1">pointBackgroundColor: </span><span class="s3">'#00C8F0'</span><span class="s1">,</span>
+                <span class="s1">pointRadius: </span><span class="s5">3</span><span class="s1">,</span>
+                <span class="s1">pointHoverRadius: </span><span class="s5">6</span><span class="s1">,</span>
+                <span class="s1">borderWidth: </span><span class="s5">2</span><span class="s1">,</span>
+            <span class="s1">}]</span>
+        <span class="s1">},</span>
+        <span class="s1">options: {</span>
+            <span class="s1">animation: { duration: </span><span class="s5">1200</span><span class="s1">, easing: </span><span class="s3">'easeInOutQuart' </span><span class="s1">},</span>
+            <span class="s1">plugins: { legend: { display: </span><span class="s6">false </span><span class="s1">}, tooltip: {</span>
+                    <span class="s1">backgroundColor: </span><span class="s3">'#0B1423'</span><span class="s1">,</span>
+                    <span class="s1">borderColor: </span><span class="s3">'#162236'</span><span class="s1">,</span>
+                    <span class="s1">borderWidth: </span><span class="s5">1</span><span class="s1">,</span>
+                    <span class="s1">titleFont: { family: </span><span class="s3">'DM Mono'</span><span class="s1">, size: </span><span class="s5">11 </span><span class="s1">},</span>
+                    <span class="s1">bodyFont: { family: </span><span class="s3">'DM Mono'</span><span class="s1">, size: </span><span class="s5">12 </span><span class="s1">},</span>
+                    <span class="s1">titleColor: </span><span class="s3">'#5A7899'</span><span class="s1">,</span>
+                    <span class="s1">bodyColor: </span><span class="s3">'#00C8F0'</span><span class="s1">,</span>
+                <span class="s1">}},</span>
+            <span class="s1">scales: {</span>
+                <span class="s1">y: { display: </span><span class="s6">false</span><span class="s1">, beginAtZero: </span><span class="s6">true </span><span class="s1">},</span>
+                <span class="s1">x: {</span>
+                    <span class="s1">grid: { color: </span><span class="s3">'rgba(22,34,54,0.8)'</span><span class="s1">, drawBorder: </span><span class="s6">false </span><span class="s1">},</span>
+                    <span class="s1">ticks: { color: </span><span class="s3">'#5A7899'</span><span class="s1">, font: { family: </span><span class="s3">'DM Mono'</span><span class="s1">, size: </span><span class="s5">10 </span><span class="s1">} }</span>
+                <span class="s1">}</span>
+            <span class="s1">},</span>
+            <span class="s1">responsive: </span><span class="s6">true</span><span class="s1">, maintainAspectRatio: </span><span class="s6">true</span><span class="s1">,</span>
+        <span class="s1">}</span>
+    <span class="s1">});</span>
+
+    <span class="s4">/* ── DATA ── */</span>
+    <span class="s1">async </span><span class="s6">function </span><span class="s1">updateStats() {</span>
+        <span class="s6">try </span><span class="s1">{</span>
+            <span class="s6">const </span><span class="s1">res = await fetch(</span><span class="s3">&quot;http://localhost:8080/usuarios&quot;</span><span class="s1">);</span>
+            <span class="s6">const </span><span class="s1">data = await res.json();</span>
+            <span class="s1">document.getElementById(</span><span class="s3">&quot;user-count&quot;</span><span class="s1">).innerText = data.length;</span>
+        <span class="s1">} </span><span class="s6">catch </span><span class="s1">(e) { </span><span class="s4">/* Java offline */ </span><span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s1">updateStats();</span>
+    <span class="s1">setInterval(updateStats, </span><span class="s5">5000</span><span class="s1">);</span>
+<span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>

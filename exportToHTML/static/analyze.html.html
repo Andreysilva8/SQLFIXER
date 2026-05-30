@@ -1,0 +1,202 @@
+<html>
+<head>
+<title>analyze.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #cf8e6d;}
+.s6 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+analyze.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;pt-BR&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s2">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s1">MySQLFixer | Análise Forense</span><span class="s0">&lt;/title&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">href</span><span class="s3">=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css&quot; </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;link </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">href</span><span class="s3">=&quot;style.css&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;orb orb-1&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;orb orb-2&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+
+<span class="s4">&lt;!-- ══ NAVBAR ══ --&gt;</span>
+<span class="s0">&lt;nav </span><span class="s2">class</span><span class="s3">=&quot;navbar&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;a </span><span class="s2">class</span><span class="s3">=&quot;navbar-brand&quot; </span><span class="s2">href</span><span class="s3">=&quot;index.html&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;logo-icon scan-anim&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;18&quot; </span><span class="s2">height</span><span class="s3">=&quot;18&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;#00C8F0&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;2&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;path </span><span class="s2">d</span><span class="s3">=&quot;M12 2L22 7V17L12 22L2 17V7L12 2Z&quot;</span><span class="s0">/&gt;</span>
+                <span class="s0">&lt;circle </span><span class="s2">cx</span><span class="s3">=&quot;12&quot; </span><span class="s2">cy</span><span class="s3">=&quot;12&quot; </span><span class="s2">r</span><span class="s3">=&quot;4&quot;</span><span class="s0">/&gt;</span>
+            <span class="s0">&lt;/svg&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+        <span class="s1">MySQL</span><span class="s0">&lt;span&gt;</span><span class="s1">Fixer</span><span class="s0">&lt;/span&gt;</span>
+    <span class="s0">&lt;/a&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;navbar-nav&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;index.html&quot;     </span><span class="s2">class</span><span class="s3">=&quot;nav-link&quot;</span><span class="s0">&gt;</span><span class="s1">Home</span><span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;dashboard.html&quot; </span><span class="s2">class</span><span class="s3">=&quot;nav-link&quot;</span><span class="s0">&gt;</span><span class="s1">Painel</span><span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;analyze.html&quot;   </span><span class="s2">class</span><span class="s3">=&quot;nav-link active&quot;</span><span class="s0">&gt;</span><span class="s1">Análises</span><span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;cadastro.html&quot;  </span><span class="s2">class</span><span class="s3">=&quot;nav-link&quot;</span><span class="s0">&gt;</span><span class="s1">Usuários</span><span class="s0">&lt;/a&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;navbar-status&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;pulse&quot;</span><span class="s0">&gt;&lt;/span&gt;</span>
+        <span class="s1">MONITORAMENTO ATIVO</span>
+    <span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/nav&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;wrapper&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s4">&lt;!-- Header --&gt;</span>
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;page-header fade-up&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;section-label&quot;</span><span class="s0">&gt;</span><span class="s1">03 — Forensic Engine</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;h1 </span><span class="s2">class</span><span class="s3">=&quot;section-title&quot;</span><span class="s0">&gt;</span><span class="s1">Análise Forense SQL</span><span class="s0">&lt;/h1&gt;</span>
+        <span class="s0">&lt;p </span><span class="s2">class</span><span class="s3">=&quot;section-sub&quot;</span><span class="s0">&gt;</span><span class="s1">Envie um script SQL para varredura profunda. O motor de IA detectará padrões anômalos, injeções e comportamentos suspeitos.</span><span class="s0">&lt;/p&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;row g-3&quot;</span><span class="s0">&gt;</span>
+        <span class="s4">&lt;!-- Upload Area --&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;col-md-6 fade-up fade-up-1&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;upload-area&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">document.getElementById(</span><span class="s3">'arquivo'</span><span class="s1">).click()</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;upload-icon&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;28&quot; </span><span class="s2">height</span><span class="s3">=&quot;28&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;#00C8F0&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;1.8&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;path </span><span class="s2">d</span><span class="s3">=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;</span><span class="s0">/&gt;</span>
+                        <span class="s0">&lt;polyline </span><span class="s2">points</span><span class="s3">=&quot;17 8 12 3 7 8&quot;</span><span class="s0">/&gt;</span>
+                        <span class="s0">&lt;line </span><span class="s2">x1</span><span class="s3">=&quot;12&quot; </span><span class="s2">y1</span><span class="s3">=&quot;3&quot; </span><span class="s2">x2</span><span class="s3">=&quot;12&quot; </span><span class="s2">y2</span><span class="s3">=&quot;15&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;/svg&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;upload-title&quot;</span><span class="s0">&gt;</span><span class="s1">Upload de Script SQL</span><span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;upload-hint&quot;</span><span class="s0">&gt;</span><span class="s1">Arraste seu arquivo .sql ou clique para selecionar</span><span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;file&quot; </span><span class="s2">id</span><span class="s3">=&quot;arquivo&quot; </span><span class="s2">accept</span><span class="s3">=&quot;.sql,.txt&quot;</span>
+                       <span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">display</span><span class="s1">:</span><span class="s3">none&quot;</span>
+                       <span class="s2">onchange</span><span class="s3">=&quot;</span><span class="s1">onFileSelect(</span><span class="s5">this</span><span class="s1">)</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">id</span><span class="s3">=&quot;file-name&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">display</span><span class="s1">:</span><span class="s3">none</span><span class="s1">; </span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s6">20</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;span </span><span class="s2">class</span><span class="s3">=&quot;tag tag-cyan&quot; </span><span class="s2">id</span><span class="s3">=&quot;file-label&quot;</span><span class="s0">&gt;</span><span class="s1">arquivo.sql</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;button </span><span class="s2">class</span><span class="s3">=&quot;btn-cyan&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">event.stopPropagation(); enviarArquivo()</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;svg </span><span class="s2">width</span><span class="s3">=&quot;14&quot; </span><span class="s2">height</span><span class="s3">=&quot;14&quot; </span><span class="s2">viewBox</span><span class="s3">=&quot;0 0 24 24&quot; </span><span class="s2">fill</span><span class="s3">=&quot;none&quot; </span><span class="s2">stroke</span><span class="s3">=&quot;currentColor&quot; </span><span class="s2">stroke-width</span><span class="s3">=&quot;2.5&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;circle </span><span class="s2">cx</span><span class="s3">=&quot;11&quot; </span><span class="s2">cy</span><span class="s3">=&quot;11&quot; </span><span class="s2">r</span><span class="s3">=&quot;8&quot;</span><span class="s0">/&gt;</span>
+                        <span class="s0">&lt;line </span><span class="s2">x1</span><span class="s3">=&quot;21&quot; </span><span class="s2">y1</span><span class="s3">=&quot;21&quot; </span><span class="s2">x2</span><span class="s3">=&quot;16.65&quot; </span><span class="s2">y2</span><span class="s3">=&quot;16.65&quot;</span><span class="s0">/&gt;</span>
+                    <span class="s0">&lt;/svg&gt;</span>
+                    <span class="s1">Iniciar Varredura</span>
+                <span class="s0">&lt;/button&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+
+            <span class="s4">&lt;!-- Info cards below upload --&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">display</span><span class="s1">:</span><span class="s3">grid</span><span class="s1">; </span><span class="s2">grid-template-columns</span><span class="s1">:</span><span class="s6">1</span><span class="s3">fr </span><span class="s6">1</span><span class="s3">fr</span><span class="s1">; </span><span class="s2">gap</span><span class="s1">:</span><span class="s6">12</span><span class="s3">px</span><span class="s1">; </span><span class="s2">margin-top</span><span class="s1">:</span><span class="s6">16</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">padding</span><span class="s1">:</span><span class="s6">16</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">font-family</span><span class="s1">:</span><span class="s3">'DM Mono'</span><span class="s1">,</span><span class="s3">monospace</span><span class="s1">;</span><span class="s2">font-size</span><span class="s1">:</span><span class="s6">0.62</span><span class="s3">rem</span><span class="s1">;</span><span class="s2">letter-spacing</span><span class="s1">:</span><span class="s6">2</span><span class="s3">px</span><span class="s1">;</span><span class="s2">color</span><span class="s1">:</span><span class="s0">var</span><span class="s1">(</span><span class="s0">--cyan</span><span class="s1">);</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s6">6</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s1">DETECTA</span><span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">font-size</span><span class="s1">:</span><span class="s6">0.8</span><span class="s3">rem</span><span class="s1">;</span><span class="s2">color</span><span class="s1">:</span><span class="s0">var</span><span class="s1">(</span><span class="s0">--text-dim</span><span class="s1">);</span><span class="s2">line-height</span><span class="s1">:</span><span class="s6">1.7</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                        <span class="s1">SQL Injection</span><span class="s0">&lt;br&gt;</span>
+                        <span class="s1">DROP malicioso</span><span class="s0">&lt;br&gt;</span>
+                        <span class="s1">Exfiltração de dados</span><span class="s0">&lt;br&gt;</span>
+                        <span class="s1">Queries anômalas</span>
+                    <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;card&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">padding</span><span class="s1">:</span><span class="s6">16</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">font-family</span><span class="s1">:</span><span class="s3">'DM Mono'</span><span class="s1">,</span><span class="s3">monospace</span><span class="s1">;</span><span class="s2">font-size</span><span class="s1">:</span><span class="s6">0.62</span><span class="s3">rem</span><span class="s1">;</span><span class="s2">letter-spacing</span><span class="s1">:</span><span class="s6">2</span><span class="s3">px</span><span class="s1">;</span><span class="s2">color</span><span class="s1">:</span><span class="s0">var</span><span class="s1">(</span><span class="s0">--purple</span><span class="s1">);</span><span class="s2">margin-bottom</span><span class="s1">:</span><span class="s6">6</span><span class="s3">px</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s1">MOTOR IA</span><span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">font-size</span><span class="s1">:</span><span class="s6">0.8</span><span class="s3">rem</span><span class="s1">;</span><span class="s2">color</span><span class="s1">:</span><span class="s0">var</span><span class="s1">(</span><span class="s0">--text-dim</span><span class="s1">);</span><span class="s2">line-height</span><span class="s1">:</span><span class="s6">1.7</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                        <span class="s1">Análise heurística</span><span class="s0">&lt;br&gt;</span>
+                        <span class="s1">Padrão de assinatura</span><span class="s0">&lt;br&gt;</span>
+                        <span class="s1">Score de risco</span><span class="s0">&lt;br&gt;</span>
+                        <span class="s1">Relatório forense</span>
+                    <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+
+        <span class="s4">&lt;!-- Result Box --&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;col-md-6 fade-up fade-up-2&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-box&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">height</span><span class="s1">:</span><span class="s6">100</span><span class="s1">%;</span><span class="s3">&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-header&quot;</span><span class="s0">&gt;</span>
+                    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-header-title&quot;</span><span class="s0">&gt;</span>
+                        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-dots&quot;</span><span class="s0">&gt;</span>
+                            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-dot dot-r&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-dot dot-y&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;result-dot dot-g&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+                        <span class="s0">&lt;/div&gt;</span>
+                        <span class="s1">Relatório de Detecção</span>
+                    <span class="s0">&lt;/div&gt;</span>
+                    <span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;scan-status&quot; </span><span class="s2">class</span><span class="s3">=&quot;tag tag-cyan&quot; </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">display</span><span class="s1">:</span><span class="s3">none</span><span class="s1">;</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s1">ESCANEANDO</span><span class="s0">&lt;/span&gt;</span>
+                <span class="s0">&lt;/div&gt;</span>
+                <span class="s0">&lt;pre </span><span class="s2">id</span><span class="s3">=&quot;resultado&quot;</span><span class="s0">&gt;</span><span class="s1">// Aguardando arquivo SQL para análise...</span>
+<span class="s1">//</span>
+<span class="s1">// O motor forense irá verificar:</span>
+<span class="s1">//   → Injeções de SQL (OWASP Top 10)</span>
+<span class="s1">//   → Comandos DDL não autorizados</span>
+<span class="s1">//   → Padrões de exfiltração</span>
+<span class="s1">//   → Anomalias comportamentais</span>
+<span class="s1">//</span>
+<span class="s1">// Selecione um arquivo e clique em</span>
+<span class="s1">// &quot;Iniciar Varredura&quot; para começar.</span><span class="s0">&lt;/pre&gt;</span>
+            <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;page-footer&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;span&gt;</span><span class="s1">MySQL</span><span class="s0">&lt;strong&gt;</span><span class="s1">Fixer</span><span class="s0">&lt;/strong&gt; </span><span class="s1">· Análise Forense SQL</span><span class="s0">&lt;/span&gt;</span>
+        <span class="s0">&lt;span&gt;</span><span class="s1">Motor de detecção heurística · v2.0</span><span class="s0">&lt;/span&gt;</span>
+    <span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;script&gt;</span>
+    <span class="s5">function </span><span class="s1">onFileSelect(input) {</span>
+        <span class="s5">const </span><span class="s1">file = input.files[</span><span class="s6">0</span><span class="s1">];</span>
+        <span class="s5">if </span><span class="s1">(!file) </span><span class="s5">return</span><span class="s1">;</span>
+        <span class="s1">document.getElementById(</span><span class="s3">'file-name'</span><span class="s1">).style.display = </span><span class="s3">'block'</span><span class="s1">;</span>
+        <span class="s1">document.getElementById(</span><span class="s3">'file-label'</span><span class="s1">).textContent = file.name;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">async </span><span class="s5">function </span><span class="s1">enviarArquivo() {</span>
+        <span class="s5">const </span><span class="s1">fileInput = document.getElementById(</span><span class="s3">&quot;arquivo&quot;</span><span class="s1">);</span>
+        <span class="s5">const </span><span class="s1">file = fileInput.files[</span><span class="s6">0</span><span class="s1">];</span>
+        <span class="s5">if </span><span class="s1">(!file) {</span>
+            <span class="s1">document.getElementById(</span><span class="s3">&quot;resultado&quot;</span><span class="s1">).innerText =</span>
+                <span class="s3">&quot;// ERRO: Nenhum arquivo selecionado.</span><span class="s5">\n</span><span class="s3">// Selecione um script .sql antes de iniciar.&quot;</span><span class="s1">;</span>
+            <span class="s5">return</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">const </span><span class="s1">status = document.getElementById(</span><span class="s3">&quot;scan-status&quot;</span><span class="s1">);</span>
+        <span class="s1">status.style.display = </span><span class="s3">'inline-flex'</span><span class="s1">;</span>
+        <span class="s1">status.textContent = </span><span class="s3">'ESCANEANDO...'</span><span class="s1">;</span>
+        <span class="s1">status.className = </span><span class="s3">'tag tag-amber'</span><span class="s1">;</span>
+
+        <span class="s1">document.getElementById(</span><span class="s3">&quot;resultado&quot;</span><span class="s1">).innerText =</span>
+            <span class="s3">&quot;// Iniciando varredura heurística...</span><span class="s5">\n</span><span class="s3">// Carregando assinaturas de ameaças...</span><span class="s5">\n</span><span class="s3">// Processando: &quot; </span><span class="s1">+ file.name;</span>
+
+        <span class="s5">const </span><span class="s1">formData = </span><span class="s5">new </span><span class="s1">FormData();</span>
+        <span class="s1">formData.append(</span><span class="s3">&quot;file&quot;</span><span class="s1">, file);</span>
+
+        <span class="s5">try </span><span class="s1">{</span>
+            <span class="s5">const </span><span class="s1">response = await fetch(</span><span class="s3">&quot;http://127.0.0.1:5000/analyze&quot;</span><span class="s1">, {</span>
+                <span class="s1">method: </span><span class="s3">&quot;POST&quot;</span><span class="s1">,</span>
+                <span class="s1">body: formData</span>
+            <span class="s1">});</span>
+            <span class="s5">const </span><span class="s1">data = await response.json();</span>
+            <span class="s1">document.getElementById(</span><span class="s3">&quot;resultado&quot;</span><span class="s1">).innerText =</span>
+                <span class="s1">data.result || </span><span class="s3">&quot;// Nenhuma anomalia crítica encontrada.</span><span class="s5">\n</span><span class="s3">// Score de risco: BAIXO&quot;</span><span class="s1">;</span>
+            <span class="s1">status.textContent = </span><span class="s3">'CONCLUÍDO'</span><span class="s1">;</span>
+            <span class="s1">status.className = </span><span class="s3">'tag tag-green'</span><span class="s1">;</span>
+        <span class="s1">} </span><span class="s5">catch </span><span class="s1">(error) {</span>
+            <span class="s1">document.getElementById(</span><span class="s3">&quot;resultado&quot;</span><span class="s1">).innerText =</span>
+                <span class="s3">&quot;// ERRO: Servidor de análise offline.</span><span class="s5">\n</span><span class="s3">// Verifique se o backend Flask está rodando</span><span class="s5">\n</span><span class="s3">// em http://127.0.0.1:5000&quot;</span><span class="s1">;</span>
+            <span class="s1">status.textContent = </span><span class="s3">'ERRO'</span><span class="s1">;</span>
+            <span class="s1">status.className = </span><span class="s3">'tag tag-red'</span><span class="s1">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
