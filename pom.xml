@@ -8,11 +8,11 @@
 		<version>3.5.13</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<groupId>br.com.empresa</groupId>
+	<artifactId>intranet-mysqlfixer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description/>
+	<name>intranet-mysqlfixer</name>
+	<description>Dashboard para conectar, analisar e monitorar bancos MySQL.</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -50,7 +50,7 @@
         <scope>runtime</scope>
     </dependency>
 
-    <!-- 🔐 SECURITY (ADICIONE ISSO) -->
+    <!-- SECURITY -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-security</artifactId>

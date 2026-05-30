@@ -2,7 +2,10 @@
     const state = {
         seenAlerts: new Set(JSON.parse(localStorage.getItem("mysqlfixer.seenAlerts") || "[]")),
         status: null,
-        alerts: []
+        alerts: [],
+        monitorRunning: false,
+        monitorInFlight: false,
+        monitorRuns: 0
     };
 
     const icons = {
@@ -23,8 +26,10 @@
         bindUsersPage();
         refreshStatus();
         refreshAlerts();
+        refreshMonitorStatus();
         setInterval(refreshStatus, 8000);
         setInterval(refreshAlerts, 6000);
+        setInterval(refreshMonitorStatus, 5000);
     });
 
     function applyInitialTheme() {
@@ -186,6 +191,16 @@
             dbScan.addEventListener("click", runDatabaseScan);
         }
 
+        bindContinuousMonitor();
+
+        const dataForm = document.getElementById("data-anomaly-form");
+        if (dataForm) {
+            dataForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                await analyzeData();
+            });
+        }
+
         const settingsForm = document.getElementById("analysis-settings");
         if (settingsForm) {
             loadSettings(settingsForm);
@@ -214,17 +229,229 @@
     }
 
     async function runDatabaseScan() {
-        const settings = collectSettings();
-        await runWithStatus("db-scan-output", "Executando varredura do banco...", async () => {
+        try {
+            await executeDatabaseScan(collectDatabaseAnalysisRequest(), "db-scan-output", "Executando varredura do banco...");
+        } catch (error) {
+            showDatabaseScanError(error);
+        }
+        await refreshAlerts();
+    }
+
+    async function executeDatabaseScan(request, outputId, loadingText) {
+        const output = document.getElementById(outputId);
+        if (output) output.textContent = loadingText;
+        try {
             const report = await api("/api/analyzer/database", {
                 method: "POST",
-                body: JSON.stringify({ settings })
+                body: JSON.stringify(request)
             });
             renderReport(report, "db-report");
             hydrateDashboardReport(report);
+            if (output) output.textContent = reportToText(report);
+            return report;
+        } catch (error) {
+            if (output) output.textContent = "ERRO: " + error.message;
+            showToast(error.message, "red");
+            error.mysqlfixerShown = true;
+            throw error;
+        }
+    }
+
+    function bindContinuousMonitor() {
+        const start = document.getElementById("monitor-start");
+        const stop = document.getElementById("monitor-stop");
+        const targetType = document.getElementById("monitor-target-type");
+        if (!start || !stop) return;
+
+        start.addEventListener("click", startContinuousMonitor);
+        stop.addEventListener("click", stopContinuousMonitor);
+        if (targetType) {
+            targetType.addEventListener("change", updateMonitorTargetHint);
+            updateMonitorTargetHint();
+        }
+    }
+
+    async function startContinuousMonitor() {
+        try {
+            const request = collectDatabaseMonitorRequest();
+            setMonitorButtons(true);
+            setMonitorStatus("Iniciando...", "tag-cyan");
+            const status = await api("/api/monitor/database/start", {
+                method: "POST",
+                body: JSON.stringify(request)
+            });
+            renderMonitorStatus(status);
+        } catch (error) {
+            showDatabaseScanError(error);
+            setMonitorButtons(false);
+            setMonitorStatus("Parado", "tag-amber");
+        }
+    }
+
+    async function stopContinuousMonitor(showMessage = true) {
+        try {
+            const status = await api("/api/monitor/database/stop", { method: "POST" });
+            renderMonitorStatus(status);
+            if (showMessage) {
+                showToast("Monitoramento parado.", "amber");
+            }
+        } catch (error) {
+            showDatabaseScanError(error);
+        }
+    }
+
+    async function refreshMonitorStatus() {
+        if (!document.getElementById("monitor-status")) return;
+        try {
+            const status = await api("/api/monitor/database/status");
+            renderMonitorStatus(status);
+        } catch (error) {
+            setMonitorButtons(false);
+            setMonitorStatus("Offline", "tag-red");
+        }
+    }
+
+    function collectDatabaseAnalysisRequest(options = {}) {
+        const targetType = value("monitor-target-type") || "full";
+        const targetName = value("monitor-target-name");
+        if (targetType === "table" && !targetName) {
+            throw new Error("Informe o nome da tabela que deve ser monitorada.");
+        }
+        return {
+            settings: settingsForTarget(collectSettings(), targetType),
+            targetType,
+            targetName,
+            monitor: Boolean(options.monitor)
+        };
+    }
+
+    function collectDatabaseMonitorRequest() {
+        const request = collectDatabaseAnalysisRequest({ monitor: true });
+        request.intervalSeconds = Math.max(Number(value("monitor-interval-seconds") || 30), 10);
+        return request;
+    }
+
+    function settingsForTarget(settings, targetType) {
+        const scoped = { ...settings };
+        if (targetType === "full") return scoped;
+        scoped.checkTables = targetType === "tables" || targetType === "table";
+        scoped.checkIndexes = targetType === "tables" || targetType === "table";
+        scoped.checkViews = targetType === "views";
+        scoped.checkProcedures = targetType === "routines";
+        scoped.checkFunctions = targetType === "routines";
+        scoped.checkSelects = targetType === "performance";
+        scoped.checkJoins = targetType === "performance";
+        scoped.checkSecurity = targetType === "tables" || targetType === "table" || settings.checkSecurity;
+        return scoped;
+    }
+
+    function updateMonitorTargetHint() {
+        const targetType = value("monitor-target-type") || "full";
+        const targetName = document.getElementById("monitor-target-name");
+        const helper = document.getElementById("monitor-target-helper");
+        if (!targetName || !helper) return;
+        const hints = {
+            full: ["ex: deixe vazio para analisar tudo", "Opcional no schema completo."],
+            tables: ["ex: deixe vazio para todas as tabelas", "Opcional para todas as tabelas."],
+            table: ["ex: usuarios", "Obrigatorio para tabela especifica."],
+            views: ["ex: vw_vendas ou deixe vazio", "Opcional para views."],
+            routines: ["ex: sp_processar_pedido ou deixe vazio", "Opcional para procedures/functions."],
+            performance: ["ex: usuarios ou deixe vazio", "Filtra queries que contenham esse texto."]
+        };
+        targetName.placeholder = hints[targetType]?.[0] || hints.full[0];
+        helper.textContent = hints[targetType]?.[1] || hints.full[1];
+    }
+
+    function setMonitorButtons(running) {
+        const start = document.getElementById("monitor-start");
+        const stop = document.getElementById("monitor-stop");
+        if (start) start.disabled = running;
+        if (stop) stop.disabled = !running;
+    }
+
+    function setMonitorStatus(text, tone) {
+        const status = document.getElementById("monitor-status");
+        if (!status) return;
+        status.className = `tag ${tone || "tag-amber"}`;
+        status.textContent = text;
+    }
+
+    function renderMonitorStatus(status) {
+        if (!status) return;
+        state.monitorRunning = Boolean(status.running);
+        state.monitorInFlight = Boolean(status.inFlight);
+        state.monitorRuns = Number(status.runCount || 0);
+        setMonitorButtons(status.running);
+
+        if (!status.running) {
+            setMonitorStatus("Parado", "tag-amber");
+        } else if (status.inFlight) {
+            setMonitorStatus("Analisando...", "tag-cyan");
+        } else if (status.lastError) {
+            setMonitorStatus("Aguardando", "tag-amber");
+        } else {
+            const issues = status.lastReport?.totalIssues ?? 0;
+            setMonitorStatus(`Ativo (${status.runCount || 0})`, issues > 0 ? "tag-red" : "tag-green");
+        }
+
+        const output = document.getElementById("db-scan-output");
+        if (!output) return;
+        if (status.lastReport) {
+            renderReport(status.lastReport, "db-report");
+            hydrateDashboardReport(status.lastReport);
+            output.textContent = reportToText(status.lastReport);
+            return;
+        }
+        if (status.running && status.lastError) {
+            output.textContent = status.lastError;
+            return;
+        }
+        if (status.running) {
+            output.textContent = `Monitoramento ativo. Alvo: ${status.targetType || "full"}${status.targetName ? " / " + status.targetName : ""}. Intervalo: ${status.intervalSeconds || 30}s.`;
+        }
+    }
+
+    function showDatabaseScanError(error) {
+        const message = error?.message || "Falha na varredura do banco.";
+        const output = document.getElementById("db-scan-output");
+        if (output && !output.textContent.startsWith("ERRO:")) {
+            output.textContent = "ERRO: " + message;
+        }
+        if (!error?.mysqlfixerShown) {
+            showToast(message, "red");
+        }
+    }
+
+    async function analyzeData() {
+        await runWithStatus("data-anomaly-output", "Analisando dados...", async () => {
+            const request = parseDataAnomalyRequest(value("data-anomaly-input"));
+            const report = await api("/api/analyzer/data", {
+                method: "POST",
+                body: JSON.stringify(request)
+            });
+            renderReport(report, "data-report");
             return reportToText(report);
         });
         await refreshAlerts();
+    }
+
+    function parseDataAnomalyRequest(rawValue) {
+        if (!rawValue) {
+            throw new Error("Informe um array JSON com as linhas para analisar.");
+        }
+        let parsed;
+        try {
+            parsed = JSON.parse(rawValue);
+        } catch (error) {
+            throw new Error("JSON invalido: " + error.message);
+        }
+        if (Array.isArray(parsed)) {
+            return { sourceName: "dataset JSON", rows: parsed };
+        }
+        if (parsed && Array.isArray(parsed.rows)) {
+            return parsed;
+        }
+        throw new Error("O JSON precisa ser um array de objetos ou conter a propriedade rows.");
     }
 
     async function runWithStatus(outputId, loadingText, task) {
@@ -509,7 +736,10 @@
     window.MySQLFixerApp = {
         api,
         runDatabaseScan,
+        startContinuousMonitor,
+        stopContinuousMonitor,
         analyzeSql,
+        analyzeData,
         refreshAlerts,
         refreshStatus,
         renderReport,

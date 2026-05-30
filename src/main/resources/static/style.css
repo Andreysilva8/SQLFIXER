@@ -467,6 +467,10 @@ textarea {
     line-height: 1.55;
 }
 
+.compact-textarea {
+    min-height: 170px;
+}
+
 .form-control:focus,
 .form-select:focus,
 textarea:focus {
@@ -526,6 +530,26 @@ textarea::placeholder {
     width: 18px;
     height: 18px;
     accent-color: var(--primary);
+}
+
+.monitor-panel {
+    margin-top: 16px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.compact-header {
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.monitor-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
 }
 
 .btn-primary,
@@ -1018,4 +1042,23 @@ tbody tr:hover td {
     .panel {
         padding: 16px;
     }
+}
+
+html[data-theme="light"] .form-control,
+html[data-theme="light"] .form-select,
+html[data-theme="light"] textarea,
+html[data-theme="light"] .btn-ghost,
+html[data-theme="light"] .icon-button,
+html[data-theme="light"] .theme-toggle,
+html[data-theme="light"] .notification-toggle {
+    background: #ffffff !important;
+    color: #0d1722 !important;
+}
+
+html[data-theme="light"] pre,
+html[data-theme="light"] pre#resultado,
+html[data-theme="light"] .code-output,
+html[data-theme="light"] .issue-fix {
+    background: #f8fafc !important;
+    color: #087f73 !important;
 }

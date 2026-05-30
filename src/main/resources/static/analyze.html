@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MySQLFixer | Análises</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css?v=server-monitor">
+    <script src="app.js?v=server-monitor" defer></script>
 </head>
 <body>
 <nav class="navbar">
@@ -114,6 +114,51 @@
                 </div>
             </form>
 
+            <div class="monitor-panel">
+                <div class="panel-header compact-header">
+                    <div>
+                        <div class="panel-title">Monitoramento continuo</div>
+                        <div class="panel-sub">Analise o banco automaticamente ate voce parar.</div>
+                    </div>
+                    <span class="tag tag-amber" id="monitor-status">Parado</span>
+                </div>
+
+                <div class="form-grid" style="margin-top:14px;">
+                    <div class="form-group">
+                        <label class="form-label" for="monitor-target-type">Alvo</label>
+                        <select id="monitor-target-type" class="form-select">
+                            <option value="full">Schema completo</option>
+                            <option value="tables">Todas as tabelas</option>
+                            <option value="table">Tabela especifica</option>
+                            <option value="views">Views</option>
+                            <option value="routines">Procedures/functions</option>
+                            <option value="performance">Queries e erros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="monitor-interval-seconds">Intervalo (s)</label>
+                        <input id="monitor-interval-seconds" type="number" class="form-control" min="10" value="30">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top:12px;">
+                    <label class="form-label" for="monitor-target-name">Nome do alvo</label>
+                    <input id="monitor-target-name" type="text" class="form-control" placeholder="ex: usuarios, vw_vendas ou sp_processar_pedido">
+                    <div class="panel-sub" id="monitor-target-helper">Opcional para schema completo, views, rotinas e performance.</div>
+                </div>
+
+                <div class="monitor-actions">
+                    <button class="btn-cyan" type="button" id="monitor-start">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M5 3l14 9-14 9V3z"/></svg>
+                        Iniciar
+                    </button>
+                    <button class="btn-ghost" type="button" id="monitor-stop" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><rect x="6" y="6" width="12" height="12"/></svg>
+                        Parar
+                    </button>
+                </div>
+            </div>
+
             <div class="result-box" style="margin-top:16px;">
                 <div class="result-header">
                     <div class="result-header-title">Varredura do banco</div>
@@ -121,6 +166,39 @@
                 <pre id="db-scan-output">A varredura usa a conexão ativa configurada na Home.</pre>
             </div>
         </aside>
+    </section>
+
+    <section class="panel" style="margin-top:16px;">
+        <div class="panel-header" style="margin-bottom:16px;">
+            <div>
+                <div class="panel-title">Analise de dados JSON</div>
+                <div class="panel-sub">Cole linhas exportadas do banco ou de uma API para detectar valores ausentes, negativos invalidos e outliers.</div>
+            </div>
+            <span class="tag tag-cyan">Java Engine</span>
+        </div>
+
+        <form id="data-anomaly-form">
+            <textarea id="data-anomaly-input" class="compact-textarea" placeholder='[{"id":1,"saldo":25,"latencyMs":10},{"id":2,"saldo":-8,"latencyMs":900}]'></textarea>
+            <div class="scan-toolbar">
+                <button class="btn-cyan" type="submit">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg>
+                    Analisar dados
+                </button>
+            </div>
+        </form>
+
+        <div class="grid-2" style="margin-top:16px;">
+            <div class="result-box">
+                <div class="result-header">
+                    <div class="result-header-title">Relatorio de anomalias</div>
+                </div>
+                <pre id="data-anomaly-output">Aguardando dados JSON para analise...</pre>
+            </div>
+
+            <div id="data-report" class="issue-list">
+                <div class="empty-state">Nenhum dataset analisado ainda.</div>
+            </div>
+        </div>
     </section>
 
     <section class="grid-2" style="margin-top:16px;">
